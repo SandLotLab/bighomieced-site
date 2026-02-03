@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BigHomieCed</title>
+
+  <style>
+    :root {
+      color-scheme: dark;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      background: radial-gradient(circle at top, #0f172a, #020617);
+      color: #e5e7eb;
+    }
+
+    .card {
+      max-width: 720px;
+      padding: 32px;
+      border-radius: 16px;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: 32px;
+      letter-spacing: -0.5px;
+    }
+
+    p {
+      margin: 0 0 16px;
+      line-height: 1.6;
+      color: #cbd5f5;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 16px 0;
+    }
+
+    .tag {
+      padding: 6px 10px;
+      font-size: 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      background: rgba(2, 6, 23, 0.6);
+      color: #93c5fd;
+    }
+
+    .status {
+      margin-top: 20px;
+      padding: 12px;
+      border-radius: 12px;
+      background: rgba(2, 6, 23, 0.8);
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      font-size: 12px;
+      color: #a5b4fc;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="card">
+    <h1>BigHomieCed</h1>
+
+    <p>
+      Hello, world. This is my sandbox for labs, systems tinkering,
+      and weird experiments that (eventually) work.
+    </p>
+
+    <div class="tags">
+      <span class="tag">labs</span>
+      <span class="tag">sandboxes</span>
+      <span class="tag">networking</span>
+      <span class="tag">L2 / L3</span>
+      <span class="tag">firewalls</span>
+      <span class="tag">systems</span>
+      <span class="tag">automation</span>
+      <span class="tag">code</span>
+    </div>
+
+    <div class="status">
+      status: online · mode: build / break / rebuild · tls: required (.app)
+    </div>
+  </main>
+</body>
+</html>
