@@ -1,2 +1,0 @@
-# bighomieced-site
-.APP
