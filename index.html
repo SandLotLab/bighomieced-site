@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>BigHomieCed | Home Lab, Networking & Systems Engineering Projects</title>
+  <title>BigHomieCed | Home Lab, Networking & Systems Engineering Sandbox</title>
   <meta name="description" content="Hands-on home lab builds, networking experiments, firewall configurations, L2/L3 routing labs, automation projects, and systems engineering documentation." />
   <link rel="canonical" href="https://bighomieced.app/" />
   <meta name="robots" content="index,follow" />
@@ -19,213 +19,250 @@
   <style>
     :root {
       color-scheme: dark;
+
       --bg0:#070711;
       --bg1:#0b0b16;
+
+      --panel: rgba(255,255,255,.06);
+      --panel2: rgba(15,16,32,.75);
+
+      --border: rgba(255,255,255,.10);
+      --border2: rgba(167,139,250,.26);
+
       --text:#f4f4ff;
-      --muted:rgba(244,244,255,.72);
-      --accent1:#8b5cf6;
-      --accent2:#a78bfa;
-      --accent3:#22d3ee;
-      --ok:#76ff7a;
-      --panel:rgba(255,255,255,.06);
-      --panel2:rgba(15,16,32,.60);
-      --border:rgba(255,255,255,.10);
-      --shadow:0 20px 70px rgba(0,0,0,.55);
-      --radius:14px;
+      --muted: rgba(244,244,255,.74);
+
+      --p1:#8b5cf6;   
+      --p2:#a78bfa;   
+      --p3:#22d3ee;   
+      --ok:#76ff7a;   
+
+      --shadow: 0 20px 70px rgba(0,0,0,.55);
+      --r: 14px;
     }
 
-    * { box-sizing:border-box; }
+    * { box-sizing: border-box; }
 
     body {
-      margin:0;
-      min-height:100vh;
-      display:flex;
-      justify-content:center;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      color:var(--text);
+      margin: 0;
+      min-height: 100vh;
       background:
         radial-gradient(900px 600px at 18% 12%, rgba(139,92,246,.24), transparent 55%),
         radial-gradient(800px 520px at 80% 24%, rgba(34,211,238,.10), transparent 55%),
-        radial-gradient(900px 700px at 52% 88%, rgba(118,255,122,.07), transparent 60%),
         linear-gradient(180deg, var(--bg0), var(--bg1));
-      padding:44px 16px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      color: var(--text);
+      padding: 32px 16px;
+      display: flex;
+      justify-content: center;
     }
 
     .card {
-      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
-      border:1px solid var(--border);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      width:min(1120px,92vw);
-      overflow:hidden;
-      position:relative;
-    }
-    .card::before {
-      content:"";
-      position:absolute;
-      inset:-2px;
-      background:
-        radial-gradient(600px 260px at 18% 0%, rgba(167,139,250,.28), transparent 55%),
-        radial-gradient(520px 240px at 90% 16%, rgba(34,211,238,.10), transparent 55%);
-      pointer-events:none;
-      opacity:.55;
-      filter:blur(10px);
+      background: var(--panel2);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      box-shadow: var(--shadow);
+      width: min(1080px, 95vw);
+      padding: 30px;
+      display: grid;
+      gap: 18px;
     }
 
     h1 {
-      font-size:28px;
-      font-weight:700;
-      letter-spacing:-.5px;
-      margin:0 0 14px;
-    }
-    h2 {
-      margin:20px 0 8px;
-      font-size:13px;
-      letter-spacing:.10em;
-      text-transform:uppercase;
-      color:rgba(244,244,255,.86);
-    }
-    h3 {
-      margin:14px 0 6px;
-      font-size:14px;
-      color:var(--text);
-      letter-spacing:-.2px;
+      font-size: 28px;
+      margin: 0;
+      letter-spacing: -0.4px;
     }
     p {
-      margin:0 0 14px;
-      line-height:1.7;
-      color:var(--muted);
-      font-size:13px;
+      margin: 0 0 16px;
+      line-height: 1.65;
+      color: var(--muted);
+      font-size: 13px;
     }
 
     .tags {
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin:14px 0 6px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
     }
     .tag {
-      padding:7px 10px;
-      font-size:12px;
-      border-radius:10px;
-      background:rgba(139,92,246,.10);
-      border:1px solid rgba(167,139,250,.28);
-      color:rgba(244,244,255,.92);
+      padding: 6px 10px;
+      font-size: 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(167,139,250,.28);
+      background: rgba(139,92,246,.10);
+      color: rgba(244,244,255,.92);
+      white-space: nowrap;
     }
 
     .layout {
-      display:grid;
-      grid-template-columns:1.65fr 1fr;
-      gap:16px;
-      align-items:start;
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 24px;
+      align-items: start;
+    }
+
+    h2 {
+      font-size: 13px;
+      letter-spacing: .10em;
+      text-transform: uppercase;
+      margin: 20px 0 8px;
+      color: var(--text);
     }
 
     .list {
-      margin:0;
-      padding-left:18px;
-      font-size:13px;
-      line-height:1.8;
-      color:var(--muted);
+      margin: 0;
+      padding-left: 18px;
+      font-size: 13px;
+      line-height: 1.7;
+      color: var(--muted);
     }
-    .list li { margin:6px 0; }
+    .list li { margin: 6px 0; }
+
+    a {
+      color: var(--p2);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+      text-decoration-color: var(--border2);
+    }
+
+    .panel-box {
+      border: 1px solid var(--border2);
+      border-radius: var(--r);
+      padding: 12px;
+      margin-top: 12px;
+    }
 
     .status {
-      margin-top:14px;
-      padding:12px;
-      border-radius:14px;
-      background:rgba(0,0,0,.25);
-      border:1px solid rgba(167,139,250,.18);
-      color:rgba(244,244,255,.80);
-      font-size:12px;
+      margin-top: 14px;
+      padding: 12px;
+      font-size: 12px;
+      background: rgba(0,0,0,.22);
+      border: 1px solid rgba(167,139,250,.16);
+      border-radius: var(--r);
+      color: var(--muted);
     }
-    .status b { color:var(--ok); font-weight:700; }
 
-    .side {
-      border-radius:var(--radius);
-      background:rgba(15,16,32,.45);
-      border:1px solid rgba(255,255,255,.10);
-      padding:14px;
-    }
-    .side h2 { margin-top:0; }
-
-    @media (max-width:980px) {
-      .layout { grid-template-columns: 1fr; }
-    }
+    .status b { color: var(--ok); font-weight: 700; }
   </style>
+
 </head>
+
 <body>
 
-  <!-- partial header -->
+  <!-- HEADER PARTIAL -->
   <div id="site-header"></div>
 
-  <main class="card">
-    <div class="pad">
-      <h1>Home Lab, Networking & Systems Engineering Sandbox</h1>
+  <section class="card">
 
-      <p>BigHomieCed is a hands-on lab for network segmentation, firewall architecture, L2/L3 routing experiments, infrastructure automation, and systems testing.</p>
+    <h1>Home Lab, Networking &amp; Systems Engineering Sandbox</h1>
 
-      <div class="tags">
-        <span class="tag">labs</span>
-        <span class="tag">sandboxes</span>
-        <span class="tag">networking</span>
-        <span class="tag">L2 / L3</span>
-        <span class="tag">firewalls</span>
-        <span class="tag">systems</span>
-        <span class="tag">automation</span>
-        <span class="tag">code</span>
+    <p>BigHomieCed is a hands-on lab for network segmentation, firewall architecture, L2/L3 routing experiments, infrastructure automation, and systems testing.</p>
+
+    <div class="tags">
+      <span class="tag">labs</span>
+      <span class="tag">sandboxes</span>
+      <span class="tag">networking</span>
+      <span class="tag">L2 / L3</span>
+      <span class="tag">firewalls</span>
+      <span class="tag">systems</span>
+      <span class="tag">automation</span>
+      <span class="tag">code</span>
+    </div>
+
+    <div class="layout">
+
+      <!-- LEFT CONTENT -->
+      <div>
+
+        <h2>What This Lab Covers</h2>
+        <ul class="list">
+          <li><a href="/projects/home-lab-architecture.html">Home Lab Architecture &amp; Virtualization</a></li>
+          <li><a href="/projects/network-segmentation-vlans.html">Network Segmentation with VLANs</a></li>
+          <li><a href="/projects/firewall-policy-design.html">Firewall Policy Design &amp; Hardening</a></li>
+          <li><a href="/projects/l2-l3-routing-labs.html">Layer 2 / Layer 3 Routing Labs</a></li>
+          <li><a href="/projects/automation-pipelines.html">Infrastructure Automation Projects</a></li>
+          <li><a href="/projects/zero-trust-experiment.html">Zero Trust Network Experiments</a></li>
+        </ul>
+
+        <h2>Featured Engineering Builds</h2>
+        <div class="panel-box">
+          <h3><a href="/projects/segmented-home-lab-build.html">Designing a Segmented Home Lab from Scratch</a></h3>
+          <p class="kicker">Placeholder — add diagrams, VLAN plan, routing table, firewall zones, and validation tests.</p>
+
+          <h3><a href="/projects/firewall-from-zero.html">Building a Deny-by-Default Firewall Policy</a></h3>
+          <p class="kicker">Placeholder — add rule strategy, logging schema, and break/fix notes.</p>
+
+          <h3><a href="/projects/tls-inspection-lab.html">TLS Inspection &amp; Encrypted Traffic Testing</a></h3>
+          <p class="kicker">Placeholder — add cert chain approach, client impact, and failure cases.</p>
+        </div>
+
+        <h2>Lab Notes &amp; Build Logs</h2>
+        <ul class="list">
+          <li><a href="/blog/designing-vlan-segmentation.html">Designing VLAN Segmentation</a></li>
+          <li><a href="/blog/firewall-rule-mistakes.html">Firewall Rule Design Mistakes</a></li>
+          <li><a href="/blog/proxmox-lab-setup.html">Setting Up a Proxmox Virtual Lab</a></li>
+          <li><a href="/blog/automating-config-backups.html">Automating Network Configuration Backups</a></li>
+          <li><a href="/blog/">View All Lab Notes</a></li>
+        </ul>
+
+        <h2>Network Diagrams &amp; Topology</h2>
+        <ul class="list">
+          <li><a href="/diagrams/home-lab-topology.html">Current Home Lab Topology</a></li>
+          <li><a href="/diagrams/firewall-zone-design.html">Firewall Zone Architecture</a></li>
+          <li><a href="/diagrams/routing-flow-analysis.html">Routing Flow &amp; Packet Path Analysis</a></li>
+        </ul>
+
+        <div class="status">
+          status: <b>online</b> · mode: build / break / rebuild · TLS: required (.app)
+        </div>
+
       </div>
 
-      <div class="status">status: <b>online</b> · mode: build / break / rebuild · tls: required (.app)</div>
+      <!-- RIGHT SIDEBAR -->
+      <aside>
+        <h2>SureWhyNot Tools</h2>
+        <ul class="list">
+          <li><a href="https://surewhynot.app/json-formatter.html">JSON Formatter</a></li>
+          <li><a href="https://surewhynot.app/json-to-typescript.html">JSON to TypeScript</a></li>
+          <li><a href="https://surewhynot.app/jwt-decoder.html">JWT Decoder</a></li>
+          <li><a href="https://surewhynot.app/csp-analyzer.html">CSP Analyzer</a></li>
+          <li><a href="https://surewhynot.app/hash-generator.html">Hash Generator</a></li>
+          <li><a href="https://surewhynot.app/uuid-generator.html">UUID Generator</a></li>
+          <li><a href="https://surewhynot.app/log-explorer.html">Log Explorer</a></li>
+        </ul>
 
-      <div class="rule"></div>
+        <h2>Games</h2>
+        <ul class="list">
+          <li><a href="https://surewhynot.app/galactica.html">Galactica</a></li>
+          <li><a href="https://surewhynot.app/roguelike.html">Roguelike</a></li>
+        </ul>
 
-      <h2>What This Lab Covers</h2>
-      <p>Practical infrastructure engineering: VLAN segmentation, firewall policy design, routing labs, zero-trust experiments, automation pipelines, and hardening patterns.</p>
-
-      <ul class="list">
-        <li><a href="/projects/home-lab-architecture.html">Home Lab Architecture & Virtualization</a></li>
-        <li><a href="/projects/network-segmentation-vlans.html">Network Segmentation with VLANs</a></li>
-        <li><a href="/projects/firewall-policy-design.html">Firewall Policy Design & Hardening</a></li>
-      </ul>
-
-      <div class="rule"></div>
-      <h2>Featured Engineering Builds</h2>
-      <h3><a href="/projects/segmented-home-lab-build.html">Designing a Segmented Home Lab from Scratch</a></h3>
-      <p class="kicker">Placeholder — add diagrams, VLAN plan, routing table, firewall zones, and validation tests.</p>
-      <h3><a href="/projects/firewall-from-zero.html">Building a Deny-by-Default Firewall Policy</a></h3>
-      <p class="kicker">Placeholder — add rule strategy, logging schema, and break/fix notes.</p>
-
-      <div class="rule"></div>
-      <h2>Lab Notes & Build Logs</h2>
-      <ul class="list">
-        <li><a href="/blog/designing-vlan-segmentation.html">Designing VLAN Segmentation for a Home Lab</a></li>
-        <li><a href="/blog/firewall-rule-mistakes.html">Firewall Rule Design Mistakes</a></li>
-      </ul>
-
-      <div class="rule"></div>
-      <h2>Network Diagrams & Lab Topology</h2>
-      <ul class="list">
-        <li><a href="/diagrams/home-lab-topology.html">Current Home Lab Topology</a></li>
-      </ul>
+        <h2>Fuel the Infrastructure</h2>
+        <p class="list"><a href="https://surewhynot.app/infrastructure.html">Fuel The Infrastructure</a></p>
+      </aside>
 
     </div>
-  </main>
 
-  <!-- partial footer -->
+  </section>
+
+  <!-- FOOTER PARTIAL -->
   <div id="site-footer"></div>
 
   <script>
-  document.addEventListener("DOMContentLoaded", async function() {
-    const headerRes = await fetch('/partials/header.html');
-    const footerRes = await fetch('/partials/footer.html');
-    const headerHTML = await headerRes.text();
-    const footerHTML = await footerRes.text();
-    if (document.getElementById('site-header')) document.getElementById('site-header').innerHTML = headerHTML;
-    if (document.getElementById('site-footer')) document.getElementById('site-footer').innerHTML = footerHTML;
-  });
+    document.addEventListener("DOMContentLoaded", async function() {
+      const headerRes = await fetch('/partials/header.html');
+      const footerRes = await fetch('/partials/footer.html');
+      if (headerRes.ok && footerRes.ok) {
+        document.getElementById('site-header').innerHTML = await headerRes.text();
+        document.getElementById('site-footer').innerHTML = await footerRes.text();
+      }
+    });
   </script>
 
-  <!-- Cloudflare Web Analytics -->
+  <!-- Analytics -->
   <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
     data-cf-beacon='{"token":"4bcdaa7405bf42e1885c19299f95a7de"}'></script>
 
