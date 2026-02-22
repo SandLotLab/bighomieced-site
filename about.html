@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head> 
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About — BigHomieCed</title>
+
+  <!-- SEO -->
+  <meta name="description" content="About BigHomieCed: a hands-on home lab and systems engineering sandbox documenting networking experiments, firewall architecture, L2/L3 routing labs, infrastructure automation, and real-world build logs." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://bighomieced.app/about.html" />
+
+  <meta property="og:title" content="About — BigHomieCed" />
+  <meta property="og:description" content="Hands-on lab documentation for networking, firewalls, routing, automation, and infrastructure experiments." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://bighomieced.app/about.html" />
+
+  <link rel="stylesheet" href="/assets/site.css">
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7167291111213614"
+     crossorigin="anonymous"></script>
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "About BigHomieCed",
+  "url": "https://bighomieced.app/about.html",
+  "description": "A hands-on home lab and systems engineering sandbox documenting networking experiments, firewall architecture, L2/L3 routing labs, infrastructure automation, and build logs."
+}
+</script>
+
+</head>
+
+<body>
+  <div class="page">
+
+    <div id="site-header"></div>
+
+    <main>
+      <div class="wrap">
+        <section class="grid" style="grid-template-columns:1fr;">
+          <div class="card">
+            <div class="pad">
+
+              <h1 class="h1" style="margin:0;">About</h1>
+              <h2 class="muted" style="margin:2px 0 0 0;font-size:12px;font-weight:normal;">
+                Home lab builds. Networking experiments. Systems engineering notes.
+              </h2>
+
+              <div class="muted">
+
+                BigHomieCed is a hands-on engineering sandbox documenting how infrastructure is designed, tested, broken, rebuilt, and hardened in a controlled lab environment.
+
+                <div class="hr"></div>
+
+                This site focuses on practical work across:
+                <br>- Home lab architecture and virtualization
+                <br>- Network segmentation and VLAN design
+                <br>- Firewall architecture, rule design, and traffic control
+                <br>- Layer 2 and Layer 3 routing labs and packet flow analysis
+                <br>- Infrastructure automation with scripts, repeatable tasks, and operational tooling
+                <br>- Hardening patterns, validation steps, and “what went wrong” build logs
+
+                <div class="hr"></div>
+
+                What you will find here:
+
+                <br><br><strong>Build Logs (Lab Notes).</strong>
+                Step-by-step writeups of lab work, including configuration decisions, validation checks, and failure analysis when a design breaks.
+
+                <br><br><strong>Project Pages.</strong>
+                Longer-form documentation for complete builds: lab topology, routing paths, firewall zones, service isolation, and operational outcomes.
+
+                <br><br><strong>Diagrams and Topology.</strong>
+                Network diagrams and infrastructure maps showing segmentation, trust boundaries, and packet flow through the lab.
+
+                <br><br><strong>Repeatable Engineering.</strong>
+                The goal is not “look what I did once,” but repeatable patterns: consistent setups, predictable rollback plans, and documented troubleshooting.
+
+                <div class="hr"></div>
+
+                Design Principles:
+
+                <br><br><strong>Real systems, real constraints.</strong>
+                Lab content is written with production thinking: least privilege, explicit policies, observability, and rollback plans.
+
+                <br><br><strong>Clarity over hype.</strong>
+                Pages prioritize concrete outcomes: configurations, diagrams, validations, and the reasoning behind decisions.
+
+                <br><br><strong>Document what fails.</strong>
+                Failures are part of the work. Build logs include what broke, why it broke, and how the fix changed the design.
+
+                <br><br><strong>Sustainable support.</strong>
+                Advertising may appear to support hosting and development. Core reading and navigation are not intended to be paywalled.
+
+                <div class="hr"></div>
+
+                BigHomieCed is built for engineers, builders, and technically curious people who want practical lab documentation—networking, firewalls, routing, automation, and systems design—without the noise of a social platform.
+
+                <br><br>
+                For production-ready browser utilities (JSON, JWT, CSP, hashes, UUIDs, log tools), visit: <a href="https://surewhynot.app/">SureWhyNot Dev Studio</a>.
+
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <div id="site-footer"></div>
+
+  </div>
+
+  <script>
+async function loadPartials() {
+  const header = await fetch('/partials/header.html');
+  const footer = await fetch('/partials/footer.html');
+
+  document.getElementById('site-header').innerHTML = await header.text();
+  document.getElementById('site-footer').innerHTML = await footer.text();
+}
+
+loadPartials();
+</script>
+
+</body>
+</html>
