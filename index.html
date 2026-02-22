@@ -3,148 +3,261 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>BigHomieCed | Home Lab, Networking & Systems Engineering Projects</title>
   <meta name="description" content="Hands-on home lab builds, networking experiments, firewall configurations, L2/L3 routing labs, automation projects, and systems engineering documentation." />
   <link rel="canonical" href="https://bighomieced.app/" />
+
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0b0f14">
+
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7167291111213614"
+    crossorigin="anonymous">
+  </script>
+
+  <style>
+    :root { color-scheme: dark; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      background: radial-gradient(circle at top, #0f172a, #020617);
+      color: #e5e7eb;
+    }
+
+    .card {
+      width: min(1100px, calc(100vw - 32px));
+      padding: 32px;
+      border-radius: 16px;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: 32px;
+      letter-spacing: -0.5px;
+    }
+
+    h2 {
+      margin: 18px 0 10px;
+      font-size: 14px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #c7d2fe;
+      opacity: .9;
+    }
+
+    h3 {
+      margin: 14px 0 6px;
+      font-size: 14px;
+      color: #e5e7eb;
+      letter-spacing: -0.2px;
+    }
+
+    p {
+      margin: 0 0 16px;
+      line-height: 1.6;
+      color: #cbd5f5;
+    }
+
+    a {
+      color: #93c5fd;
+      text-decoration: none;
+    }
+    a:hover { text-decoration: underline; }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 16px 0 20px;
+    }
+
+    .tag {
+      padding: 6px 10px;
+      font-size: 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      background: rgba(2, 6, 23, 0.6);
+      color: #93c5fd;
+    }
+
+    .status {
+      margin-top: 18px;
+      padding: 12px;
+      border-radius: 12px;
+      background: rgba(2, 6, 23, 0.8);
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      font-size: 12px;
+      color: #a5b4fc;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 22px;
+      align-items: start;
+      margin-top: 18px;
+    }
+
+    .panel {
+      border-radius: 14px;
+      background: rgba(2, 6, 23, 0.55);
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      padding: 14px;
+    }
+
+    .list {
+      margin: 0;
+      padding-left: 18px;
+      color: #cbd5f5;
+      line-height: 1.7;
+      font-size: 13px;
+    }
+
+    .kicker {
+      font-size: 12px;
+      color: #a5b4fc;
+      opacity: .9;
+      margin-top: -8px;
+      margin-bottom: 12px;
+    }
+
+    .divider {
+      height: 1px;
+      background: rgba(148, 163, 184, 0.18);
+      margin: 14px 0;
+    }
+
+    @media (max-width: 900px) {
+      .layout { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 
 <body>
+  <main class="card">
+    <!-- SEO: single H1 -->
+    <h1>Home Lab, Networking &amp; Systems Engineering Sandbox</h1>
 
-  <header>
-    <h1>Home Lab, Networking & Systems Engineering Sandbox</h1>
     <p>
-      BigHomieCed is a hands-on engineering lab focused on network segmentation,
-      firewall architecture, routing experiments, infrastructure automation,
-      and real-world systems design.
+      BigHomieCed is a hands-on lab for network segmentation, firewall architecture,
+      L2/L3 routing experiments, infrastructure automation, and systems testing.
     </p>
-  </header>
 
-  <div style="display:flex; gap:40px; align-items:flex-start;">
+    <div class="tags">
+      <span class="tag">labs</span>
+      <span class="tag">sandboxes</span>
+      <span class="tag">networking</span>
+      <span class="tag">L2 / L3</span>
+      <span class="tag">firewalls</span>
+      <span class="tag">systems</span>
+      <span class="tag">automation</span>
+      <span class="tag">code</span>
+    </div>
 
-    <!-- MAIN CONTENT -->
-    <main style="flex:3;">
-
+    <div class="layout">
+      <!-- MAIN CONTENT -->
       <section>
         <h2>What This Lab Covers</h2>
         <p>
-          This site documents practical infrastructure engineering:
-          VLAN segmentation, firewall rule design, L2/L3 routing labs,
-          zero-trust experiments, automation builds, and system hardening.
+          Practical infrastructure engineering: VLAN segmentation, firewall policy design,
+          routing labs, zero-trust experiments, automation pipelines, and hardening patterns.
         </p>
 
-        <ul>
-          <li><a href="/projects/home-lab-architecture.html">Home Lab Architecture & Virtualization</a></li>
+        <ul class="list">
+          <li><a href="/projects/home-lab-architecture.html">Home Lab Architecture &amp; Virtualization</a></li>
           <li><a href="/projects/network-segmentation-vlans.html">Network Segmentation with VLANs</a></li>
-          <li><a href="/projects/firewall-policy-design.html">Firewall Policy Design & Hardening</a></li>
+          <li><a href="/projects/firewall-policy-design.html">Firewall Policy Design &amp; Hardening</a></li>
           <li><a href="/projects/l2-l3-routing-labs.html">Layer 2 / Layer 3 Routing Labs</a></li>
           <li><a href="/projects/automation-pipelines.html">Infrastructure Automation Projects</a></li>
           <li><a href="/projects/zero-trust-experiment.html">Zero Trust Network Experiments</a></li>
         </ul>
-      </section>
 
-      <section>
         <h2>Featured Engineering Builds</h2>
 
-        <article>
+        <div class="panel">
           <h3><a href="/projects/segmented-home-lab-build.html">Designing a Segmented Home Lab from Scratch</a></h3>
-          <p>Multi-VLAN lab environment with firewall isolation and controlled east-west traffic.</p>
-        </article>
+          <p class="kicker">Placeholder — add diagrams, VLAN plan, routing table, firewall zones, and validation tests.</p>
 
-        <article>
           <h3><a href="/projects/firewall-from-zero.html">Building a Deny-by-Default Firewall Policy</a></h3>
-          <p>Explicit rule sets, logging strategy, inspection testing, and failure analysis.</p>
-        </article>
+          <p class="kicker">Placeholder — add rule strategy, logging schema, and break/fix notes.</p>
 
-        <article>
-          <h3><a href="/projects/tls-inspection-lab.html">TLS Inspection & Encrypted Traffic Testing</a></h3>
-          <p>Certificate handling, encrypted visibility, and client behavior testing.</p>
-        </article>
-      </section>
+          <h3><a href="/projects/tls-inspection-lab.html">TLS Inspection &amp; Encrypted Traffic Testing</a></h3>
+          <p class="kicker">Placeholder — add cert chain approach, client impact, and failure cases.</p>
+        </div>
 
-      <section>
-        <h2>Lab Notes & Build Logs</h2>
+        <h2>Lab Notes &amp; Build Logs</h2>
         <p>
-          Ongoing documentation of lab experiments, failures, rebuilds,
-          and lessons learned while designing network and systems infrastructure.
+          Build logs focused on what broke, why it broke, and what the fix taught me.
         </p>
 
-        <ul>
+        <ul class="list">
           <li><a href="/blog/designing-vlan-segmentation.html">Designing VLAN Segmentation for a Home Lab</a></li>
           <li><a href="/blog/firewall-rule-mistakes.html">Firewall Rule Design Mistakes</a></li>
           <li><a href="/blog/proxmox-lab-setup.html">Setting Up a Proxmox Virtual Lab</a></li>
           <li><a href="/blog/automating-config-backups.html">Automating Network Configuration Backups</a></li>
+          <li><a href="/blog/">View All Lab Notes</a></li>
         </ul>
 
-        <p><a href="/blog/">View All Lab Notes</a></p>
-      </section>
-
-      <section>
-        <h2>Technologies Used in the Lab</h2>
-        <p>
-          Proxmox virtualization, pfSense and next-generation firewalls,
-          Cisco routing labs, Docker services, Python automation,
-          PowerShell infrastructure tasks, and Cloudflare edge controls.
-        </p>
-      </section>
-
-      <section>
-        <h2>Network Diagrams & Lab Topology</h2>
-        <ul>
+        <h2>Network Diagrams &amp; Lab Topology</h2>
+        <ul class="list">
           <li><a href="/diagrams/home-lab-topology.html">Current Home Lab Topology</a></li>
           <li><a href="/diagrams/firewall-zone-design.html">Firewall Zone Architecture</a></li>
-          <li><a href="/diagrams/routing-flow-analysis.html">Routing Flow & Packet Path Analysis</a></li>
+          <li><a href="/diagrams/routing-flow-analysis.html">Routing Flow &amp; Packet Path Analysis</a></li>
         </ul>
+
+        <div class="status">
+          status: online · mode: build / break / rebuild · tls: required (.app)
+        </div>
       </section>
 
-    </main>
+      <!-- SIDEBAR -->
+      <aside class="panel">
+        <h2>SureWhyNot Tools</h2>
+        <ul class="list">
+          <li><a href="https://surewhynot.app/json-formatter.html">JSON Formatter</a></li>
+          <li><a href="https://surewhynot.app/json-to-typescript.html">JSON to TypeScript</a></li>
+          <li><a href="https://surewhynot.app/jwt-decoder.html">JWT Decoder</a></li>
+          <li><a href="https://surewhynot.app/csp-analyzer.html">CSP Analyzer</a></li>
+          <li><a href="https://surewhynot.app/hash-generator.html">Hash Generator</a></li>
+          <li><a href="https://surewhynot.app/uuid-generator.html">UUID Generator</a></li>
+          <li><a href="https://surewhynot.app/log-explorer.html">Log Explorer</a></li>
+        </ul>
 
-    <!-- SIDEBAR: DEV STUDIO TOOLS -->
-    <aside style="flex:1; border-left:1px solid #222; padding-left:20px;">
+        <div class="divider"></div>
 
-      <h2>Developer Tools</h2>
-      <p>Production-ready browser-based utilities:</p>
+        <h2>Games</h2>
+        <ul class="list">
+          <li><a href="https://surewhynot.app/galactica.html">Galactica</a></li>
+          <li><a href="https://surewhynot.app/roguelike.html">Roguelike</a></li>
+        </ul>
 
-      <ul>
-        <li><a href="https://surewhynot.app/json-formatter.html">JSON Formatter</a></li>
-        <li><a href="https://surewhynot.app/json-to-typescript.html">JSON to TypeScript</a></li>
-        <li><a href="https://surewhynot.app/jwt-decoder.html">JWT Decoder</a></li>
-        <li><a href="https://surewhynot.app/csp-analyzer.html">CSP Analyzer</a></li>
-        <li><a href="https://surewhynot.app/hash-generator.html">Hash Generator</a></li>
-        <li><a href="https://surewhynot.app/uuid-generator.html">UUID Generator</a></li>
-        <li><a href="https://surewhynot.app/log-explorer.html">Log Explorer</a></li>
-      </ul>
+        <div class="divider"></div>
 
-      <hr>
+        <h2>Fuel The Infrastructure</h2>
+        <p style="margin:0;">
+          <a href="https://surewhynot.app/infrastructure.html">Fuel The Infrastructure</a>
+        </p>
 
-      <h2>Games</h2>
-      <ul>
-        <li><a href="https://surewhynot.app/galactica.html">Galactica</a></li>
-        <li><a href="https://surewhynot.app/roguelike.html">Roguelike</a></li>
-      </ul>
+        <div class="divider"></div>
 
-      <hr>
+        <p style="margin:0; font-size:12px; color:#cbd5f5;">
+          <a href="https://surewhynot.app/">SureWhyNot Dev Studio</a>
+        </p>
+      </aside>
+    </div>
+  </main>
 
-      <h2>Support</h2>
-      <p>
-        <a href="https://surewhynot.app/infrastructure.html">
-          Fuel The Infrastructure
-        </a>
-      </p>
-
-      <hr>
-
-      <p>
-        Visit the full Dev Studio:<br>
-        <a href="https://surewhynot.app/">SureWhyNot Dev Studio</a>
-      </p>
-
-    </aside>
-
-  </div>
-
-  <footer>
-    <p>© 2026 BigHomieCed | Systems Engineering Lab</p>
-  </footer>
-
+  <!-- Cloudflare Web Analytics -->
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+    data-cf-beacon='{"token":"4bcdaa7405bf42e1885c19299f95a7de"}'></script>
+  <!-- End Cloudflare Web Analytics -->
 </body>
 </html>
