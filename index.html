@@ -1,12 +1,11 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>BigHomieCed | Labs, Networking & Systems Engineering</title>
-  <meta name="description" content="Hands-on labs, networking experiments, firewall configurations, L2/L3 routing labs, automation projects, and systems engineering documentation." />
+  <title>BigHomieCed | Home Lab, Networking & Systems Engineering Projects</title>
+  <meta name="description" content="Hands-on home lab builds, networking experiments, firewall configurations, L2/L3 routing labs, automation projects, and systems engineering documentation." />
   <link rel="canonical" href="https://bighomieced.app/" />
 
   <link rel="manifest" href="/site.webmanifest">
@@ -20,89 +19,97 @@
     :root{
       color-scheme: dark;
 
-      /* Kosmic-ish: black + white + purple */
+      /* Purple/white/black (Kosmic-ish) */
       --bg0:#070711;
       --bg1:#0b0b16;
-      --panel:#0f1020;
-      --panel2:#0c0d18;
-      --border:rgba(255,255,255,.10);
-      --border2:rgba(167,139,250,.25);
+
+      --panel: rgba(255,255,255,.06);
+      --panel2: rgba(15,16,32,.75);
+
+      --border: rgba(255,255,255,.10);
+      --border2: rgba(167,139,250,.26);
 
       --text:#f4f4ff;
-      --muted:rgba(244,244,255,.72);
+      --muted: rgba(244,244,255,.74);
 
-      --p1:#8b5cf6; /* purple */
-      --p2:#a78bfa; /* lavender */
-      --p3:#22d3ee; /* cyan sprinkle */
-      --hot:#ff4fd8; /* magenta sprinkle */
+      --p1:#8b5cf6;   /* purple */
+      --p2:#a78bfa;   /* lavender */
+      --p3:#22d3ee;   /* cyan sprinkle */
       --ok:#76ff7a;
 
       --shadow: 0 20px 70px rgba(0,0,0,.55);
-      --r:18px;
+      --r: 18px;
     }
 
     *{ box-sizing:border-box; }
+
     body{
       margin:0;
       min-height:100vh;
       font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      color: var(--text);
+      display:flex;
+      justify-content:center;
+      padding: 44px 16px;
       background:
         radial-gradient(900px 600px at 18% 12%, rgba(139,92,246,.24), transparent 55%),
         radial-gradient(800px 520px at 80% 24%, rgba(34,211,238,.10), transparent 55%),
-        radial-gradient(900px 700px at 52% 88%, rgba(255,79,216,.10), transparent 60%),
+        radial-gradient(900px 700px at 52% 88%, rgba(167,139,250,.12), transparent 60%),
         linear-gradient(180deg, var(--bg0), var(--bg1));
-      color:var(--text);
-      display:flex;
-      justify-content:center;
-      padding:44px 16px;
     }
 
-    .shell{
-      width:min(1200px, 100%);
+    a{
+      color: var(--p2);
+      text-decoration: none;
+    }
+    a:hover{
+      color:#fff;
+      text-decoration: underline;
+      text-decoration-color: rgba(167,139,250,.75);
     }
 
-    /* Top header strip */
+    .shell{ width: min(1200px, 100%); }
+
+    /* header strip */
     .top{
       display:flex;
       align-items:flex-end;
       justify-content:space-between;
       gap:16px;
-      margin-bottom:16px;
+      margin-bottom: 16px;
     }
 
     .brand{
       display:flex;
-      align-items:center;
+      align-items:flex-start;
       gap:10px;
     }
-
     .dot{
       width:10px; height:10px; border-radius:999px;
+      margin-top: 10px;
       background: radial-gradient(circle at 30% 30%, #fff, var(--p2) 35%, var(--p1) 70%);
       box-shadow: 0 0 0 4px rgba(167,139,250,.12), 0 0 18px rgba(167,139,250,.35);
+      flex: 0 0 auto;
     }
-
-    .brand h1{
+    .brandTitle{
       margin:0;
-      font-size:30px;
-      letter-spacing:-.6px;
-      line-height:1.1;
+      font-size: 26px;
+      letter-spacing: -.6px;
+      line-height: 1.15;
+    }
+    .brandSub{
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+      max-width: 78ch;
     }
 
-    .sub{
-      margin:6px 0 0;
-      color:var(--muted);
-      font-size:13px;
-      max-width:70ch;
-    }
-
-    .cta{
+    .nav{
       display:flex;
       gap:10px;
       flex-wrap:wrap;
       justify-content:flex-end;
     }
-
     .chip{
       display:inline-flex;
       align-items:center;
@@ -111,74 +118,88 @@
       border-radius:999px;
       background: rgba(255,255,255,.04);
       border:1px solid var(--border);
-      color:var(--text);
+      color: var(--text);
       text-decoration:none;
       font-size:12px;
       white-space:nowrap;
       transition: transform .12s ease, border-color .12s ease, background .12s ease;
     }
-
     .chip:hover{
       transform: translateY(-1px);
       border-color: rgba(167,139,250,.55);
       background: rgba(167,139,250,.10);
+      text-decoration:none;
+      color: var(--text);
     }
 
-    /* Main layout: hero left + tools right */
-    .grid{
+    /* main layout */
+    .layout{
       display:grid;
       grid-template-columns: 1.65fr 1fr;
-      gap:16px;
+      gap: 16px;
       align-items:start;
     }
 
     .card{
       border-radius: var(--r);
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
-      border:1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      border: 1px solid var(--border);
       box-shadow: var(--shadow);
       overflow:hidden;
-      position:relative;
+      position: relative;
     }
-
     .card::before{
       content:"";
       position:absolute;
       inset:-2px;
-      background: radial-gradient(600px 260px at 18% 0%, rgba(167,139,250,.28), transparent 55%),
-                  radial-gradient(520px 240px at 90% 16%, rgba(34,211,238,.10), transparent 55%);
+      background:
+        radial-gradient(600px 260px at 18% 0%, rgba(167,139,250,.28), transparent 55%),
+        radial-gradient(520px 240px at 90% 16%, rgba(34,211,238,.10), transparent 55%);
       pointer-events:none;
       opacity:.55;
       filter: blur(10px);
     }
+    .pad{ position:relative; padding: 22px; }
 
-    .pad{ position:relative; padding:22px; }
+    /* SEO: single H1 */
+    h1{
+      margin:0 0 10px;
+      font-size: 16px;
+      letter-spacing: .10em;
+      text-transform: uppercase;
+      color: rgba(244,244,255,.86);
+    }
 
     h2{
-      margin:0 0 10px;
-      font-size:14px;
-      letter-spacing:.10em;
-      text-transform:uppercase;
+      margin: 20px 0 10px;
+      font-size: 13px;
+      letter-spacing: .10em;
+      text-transform: uppercase;
       color: rgba(244,244,255,.86);
+    }
+
+    h3{
+      margin: 14px 0 6px;
+      font-size: 14px;
+      color: var(--text);
+      letter-spacing: -.2px;
     }
 
     p{
       margin:0 0 14px;
-      line-height:1.7;
+      line-height: 1.7;
       color: var(--muted);
-      font-size:13px;
+      font-size: 13px;
     }
 
-    /* Draft-table-ish section rules */
     .rule{
       height:1px;
       background: linear-gradient(90deg, rgba(167,139,250,.55), rgba(255,255,255,.10), rgba(34,211,238,.20));
       opacity:.7;
-      margin:14px 0;
+      margin: 14px 0;
     }
 
-    /* Tags: purple/ink */
+    /* tags */
     .tags{ display:flex; flex-wrap:wrap; gap:10px; margin: 14px 0 6px; }
     .tag{
       padding:7px 10px;
@@ -186,19 +207,52 @@
       border-radius:10px;
       background: rgba(139,92,246,.10);
       border: 1px solid rgba(167,139,250,.28);
-      color: rgba(244,244,255,.90);
+      color: rgba(244,244,255,.92);
     }
     .tag:hover{ border-color: rgba(167,139,250,.60); }
 
-    /* Links */
-    a{ color: var(--p2); text-decoration:none; }
-    a:hover{ color:#fff; text-decoration: underline; text-decoration-color: rgba(167,139,250,.7); }
+    /* lists */
+    .list{
+      margin:0;
+      padding-left: 18px;
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 13px;
+    }
+    .list li{ margin: 6px 0; }
 
-    /* Lists */
-    ul{ margin:0; padding-left:18px; color: var(--muted); line-height:1.8; font-size:13px; }
-    li{ margin:6px 0; }
+    .kicker{
+      font-size: 12px;
+      color: rgba(244,244,255,.66);
+      margin-top: -6px;
+      margin-bottom: 12px;
+    }
 
-    /* Sidebar buttons: not pills, more “Kosmic panel” */
+    /* status line */
+    .status{
+      margin-top: 14px;
+      padding: 12px;
+      border-radius: 14px;
+      background: rgba(0,0,0,.25);
+      border: 1px solid rgba(167,139,250,.18);
+      color: rgba(244,244,255,.80);
+      font-size: 12px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      align-items:center;
+    }
+    .pill{
+      padding:4px 8px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      color: rgba(244,244,255,.78);
+      font-size:11px;
+    }
+    .pill b{ color: var(--ok); font-weight: 700; }
+
+    /* sidebar buttons */
     .btn{
       display:flex;
       align-items:center;
@@ -207,7 +261,7 @@
       padding:10px 12px;
       margin:8px 0;
       border-radius:12px;
-      background: rgba(15,16,32,.75);
+      background: var(--panel2);
       border: 1px solid rgba(167,139,250,.20);
       color: rgba(244,244,255,.92);
       text-decoration:none;
@@ -218,48 +272,24 @@
       border-color: rgba(167,139,250,.55);
       background: rgba(139,92,246,.16);
       text-decoration:none;
+      color: rgba(244,244,255,.98);
     }
     .btn span{
-      opacity:.75;
+      opacity:.72;
       font-size:12px;
-      color: rgba(244,244,255,.68);
+      color: rgba(244,244,255,.66);
     }
-
     .sectionTitle{
       margin-top:6px;
-      color: rgba(244,244,255,.88);
+      color: rgba(244,244,255,.84);
       font-size:12px;
       letter-spacing:.10em;
-      text-transform:uppercase;
+      text-transform: uppercase;
     }
 
-    .status{
-      margin-top:14px;
-      padding:12px;
-      border-radius:14px;
-      background: rgba(0,0,0,.25);
-      border: 1px solid rgba(167,139,250,.18);
-      color: rgba(244,244,255,.80);
-      font-size:12px;
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      align-items:center;
-    }
-    .status b{ color: var(--ok); font-weight:700; }
-    .pill{
-      padding:4px 8px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.04);
-      color: rgba(244,244,255,.78);
-      font-size:11px;
-    }
-
-    /* Responsive */
     @media (max-width: 980px){
-      .grid{ grid-template-columns: 1fr; }
-      .cta{ justify-content:flex-start; }
+      .layout{ grid-template-columns: 1fr; }
+      .nav{ justify-content:flex-start; }
     }
   </style>
 </head>
@@ -268,30 +298,33 @@
   <div class="shell">
 
     <div class="top">
-      <div>
-        <div class="brand">
-          <div class="dot"></div>
-          <div>
-            <h1>BigHomieCed</h1>
-            <p class="sub">Hands-on labs, networking experiments, firewall configurations, automation builds, and systems engineering projects.</p>
-          </div>
+      <div class="brand">
+        <div class="dot"></div>
+        <div>
+          <div class="brandTitle">BigHomieCed</div>
+          <p class="brandSub">Hands-on labs, networking experiments, firewall configurations, automation builds, and systems engineering projects.</p>
         </div>
       </div>
 
-      <div class="cta">
+      <nav class="nav">
         <a class="chip" href="/blog/">Lab Notes</a>
         <a class="chip" href="/projects/">Projects</a>
         <a class="chip" href="/diagrams/">Diagrams</a>
-      </div>
+      </nav>
     </div>
 
-    <div class="grid">
+    <div class="layout">
 
-      <!-- LEFT / MAIN -->
+      <!-- MAIN CONTENT -->
       <main class="card">
         <div class="pad">
-          <h2>Home Lab, Networking &amp; Systems Engineering Sandbox</h2>
-          <p>This is where I break things, rebuild it better, and document what worked (eventually).</p>
+
+          <h1>Home Lab, Networking &amp; Systems Engineering Sandbox</h1>
+
+          <p>
+            BigHomieCed is a hands-on lab for network segmentation, firewall architecture,
+            L2/L3 routing experiments, infrastructure automation, and systems testing.
+          </p>
 
           <div class="tags">
             <span class="tag">labs</span>
@@ -313,7 +346,12 @@
           <div class="rule"></div>
 
           <h2>What This Lab Covers</h2>
-          <ul>
+          <p>
+            Practical infrastructure engineering: VLAN segmentation, firewall policy design,
+            routing labs, zero-trust experiments, automation pipelines, and hardening patterns.
+          </p>
+
+          <ul class="list">
             <li><a href="/projects/home-lab-architecture.html">Home Lab Architecture &amp; Virtualization</a></li>
             <li><a href="/projects/network-segmentation-vlans.html">Network Segmentation with VLANs</a></li>
             <li><a href="/projects/firewall-policy-design.html">Firewall Policy Design &amp; Hardening</a></li>
@@ -324,16 +362,43 @@
 
           <div class="rule"></div>
 
-          <h2>Featured Builds</h2>
-          <ul>
-            <li><a href="/projects/segmented-home-lab-build.html">Designing a Segmented Home Lab from Scratch</a></li>
-            <li><a href="/projects/firewall-from-zero.html">Building a Deny-by-Default Firewall Policy</a></li>
-            <li><a href="/projects/tls-inspection-lab.html">TLS Inspection &amp; Encrypted Traffic Testing</a></li>
+          <h2>Featured Engineering Builds</h2>
+
+          <h3><a href="/projects/segmented-home-lab-build.html">Designing a Segmented Home Lab from Scratch</a></h3>
+          <p class="kicker">Placeholder — add diagrams, VLAN plan, routing table, firewall zones, and validation tests.</p>
+
+          <h3><a href="/projects/firewall-from-zero.html">Building a Deny-by-Default Firewall Policy</a></h3>
+          <p class="kicker">Placeholder — add rule strategy, logging schema, and break/fix notes.</p>
+
+          <h3><a href="/projects/tls-inspection-lab.html">TLS Inspection &amp; Encrypted Traffic Testing</a></h3>
+          <p class="kicker">Placeholder — add cert chain approach, client impact, and failure cases.</p>
+
+          <div class="rule"></div>
+
+          <h2>Lab Notes &amp; Build Logs</h2>
+          <p>Build logs focused on what broke, why it broke, and what the fix taught me.</p>
+
+          <ul class="list">
+            <li><a href="/blog/designing-vlan-segmentation.html">Designing VLAN Segmentation for a Home Lab</a></li>
+            <li><a href="/blog/firewall-rule-mistakes.html">Firewall Rule Design Mistakes</a></li>
+            <li><a href="/blog/proxmox-lab-setup.html">Setting Up a Proxmox Virtual Lab</a></li>
+            <li><a href="/blog/automating-config-backups.html">Automating Network Configuration Backups</a></li>
+            <li><a href="/blog/">View All Lab Notes</a></li>
           </ul>
+
+          <div class="rule"></div>
+
+          <h2>Network Diagrams &amp; Lab Topology</h2>
+          <ul class="list">
+            <li><a href="/diagrams/home-lab-topology.html">Current Home Lab Topology</a></li>
+            <li><a href="/diagrams/firewall-zone-design.html">Firewall Zone Architecture</a></li>
+            <li><a href="/diagrams/routing-flow-analysis.html">Routing Flow &amp; Packet Path Analysis</a></li>
+          </ul>
+
         </div>
       </main>
 
-      <!-- RIGHT / DEV TOOLS -->
+      <!-- SIDEBAR -->
       <aside class="card">
         <div class="pad">
           <h2>SureWhyNot Tools</h2>
@@ -354,8 +419,11 @@
 
           <div class="rule"></div>
 
-          <div class="sectionTitle">Fuel</div>
+          <div class="sectionTitle">Fuel The Infrastructure</div>
           <a class="btn" href="https://surewhynot.app/infrastructure.html">Fuel The Infrastructure <span>support</span></a>
+
+          <div class="rule"></div>
+
           <a class="btn" href="https://surewhynot.app/">SureWhyNot Dev Studio <span>home</span></a>
         </div>
       </aside>
@@ -368,4 +436,3 @@
     data-cf-beacon='{"token":"4bcdaa7405bf42e1885c19299f95a7de"}'></script>
 </body>
 </html>
-```
