@@ -1,10 +1,10 @@
 <!-- /partials/footer.html -->
 <footer>
   <div class="footerwrap">
-
+    
     <!-- Left: copyright -->
     <div>© 2026 bighomieced.app</div>
-
+    
     <!-- Right: site links -->
     <div class="footerlinks">
       <a href="/about.html">About</a>
@@ -15,34 +15,10 @@
       <span>•</span>
       <a href="/terms.html">Terms</a>
     </div>
-
-    <div style="width:100%; text-align:center; margin-top:14px; font-size:11px; letter-spacing:1.5px; opacity:.4;">
+	
+	<div style="width:100%; text-align:center; margin-top:14px; font-size:11px; letter-spacing:1.5px; opacity:.4;">
       // Beware of The Old Soldier
     </div>
 
   </div>
 </footer>
-
-<!-- Navigation Highlight Script (runs after footer) -->
-<script>
-window.addEventListener("DOMContentLoaded", function() {
-  const path = window.location.pathname.toLowerCase();
-
-  const navMap = [
-    { selector: 'a.pill[href="/"]', match: p => p === "/" },
-    { selector: 'a.pill[href="/about.html"]', match: p => p === "/about.html" },
-    { selector: 'a.pill[href="/privacy.html"]', match: p => p === "/privacy.html" },
-    { selector: 'a.pill[href="/terms.html"]', match: p => p === "/terms.html" },
-    { selector: 'a.pill[href="/blog/"]', match: p => p.startsWith("/blog/") },
-    { selector: 'a.pill[href="/projects/"]', match: p => p.startsWith("/projects/") },
-    { selector: 'a.pill[href="/diagrams/"]', match: p => p.startsWith("/diagrams/") }
-  ];
-
-  navMap.forEach(item => {
-    const el = document.querySelector(item.selector);
-    if (el && item.match(path)) {
-      el.classList.add("active");
-    }
-  });
-});
-</script>
