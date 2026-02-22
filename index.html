@@ -7,6 +7,7 @@
   <title>BigHomieCed | Home Lab, Networking & Systems Engineering Projects</title>
   <meta name="description" content="Hands-on home lab builds, networking experiments, firewall configurations, L2/L3 routing labs, automation projects, and systems engineering documentation." />
   <link rel="canonical" href="https://bighomieced.app/" />
+  <meta name="robots" content="index,follow" />
 
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0b0b12">
@@ -19,12 +20,9 @@
     :root{
       color-scheme: dark;
 
-      /* Purple/white/black (Kosmic-ish) */
+      /* Purple/white/black */
       --bg0:#070711;
       --bg1:#0b0b16;
-
-      --panel: rgba(255,255,255,.06);
-      --panel2: rgba(15,16,32,.75);
 
       --border: rgba(255,255,255,.10);
       --border2: rgba(167,139,250,.26);
@@ -58,15 +56,8 @@
         linear-gradient(180deg, var(--bg0), var(--bg1));
     }
 
-    a{
-      color: var(--p2);
-      text-decoration: none;
-    }
-    a:hover{
-      color:#fff;
-      text-decoration: underline;
-      text-decoration-color: rgba(167,139,250,.75);
-    }
+    a{ color: var(--p2); text-decoration: none; }
+    a:hover{ color:#fff; text-decoration: underline; text-decoration-color: rgba(167,139,250,.75); }
 
     .shell{ width: min(1200px, 100%); }
 
@@ -84,6 +75,7 @@
       align-items:flex-start;
       gap:10px;
     }
+
     .dot{
       width:10px; height:10px; border-radius:999px;
       margin-top: 10px;
@@ -91,12 +83,16 @@
       box-shadow: 0 0 0 4px rgba(167,139,250,.12), 0 0 18px rgba(167,139,250,.35);
       flex: 0 0 auto;
     }
+
+    /* NOT an H1 (keeps single-H1 SEO clean) */
     .brandTitle{
       margin:0;
       font-size: 26px;
       letter-spacing: -.6px;
       line-height: 1.15;
+      font-weight: 800;
     }
+
     .brandSub{
       margin: 6px 0 0;
       color: var(--muted);
@@ -110,6 +106,7 @@
       flex-wrap:wrap;
       justify-content:flex-end;
     }
+
     .chip{
       display:inline-flex;
       align-items:center;
@@ -124,6 +121,7 @@
       white-space:nowrap;
       transition: transform .12s ease, border-color .12s ease, background .12s ease;
     }
+
     .chip:hover{
       transform: translateY(-1px);
       border-color: rgba(167,139,250,.55);
@@ -148,6 +146,7 @@
       overflow:hidden;
       position: relative;
     }
+
     .card::before{
       content:"";
       position:absolute;
@@ -159,15 +158,16 @@
       opacity:.55;
       filter: blur(10px);
     }
+
     .pad{ position:relative; padding: 22px; }
 
-    /* SEO: single H1 */
+    /* SEO: SINGLE H1 */
     h1{
       margin:0 0 10px;
       font-size: 16px;
       letter-spacing: .10em;
       text-transform: uppercase;
-      color: rgba(244,244,255,.86);
+      color: rgba(244,244,255,.90);
     }
 
     h2{
@@ -199,7 +199,6 @@
       margin: 14px 0;
     }
 
-    /* tags */
     .tags{ display:flex; flex-wrap:wrap; gap:10px; margin: 14px 0 6px; }
     .tag{
       padding:7px 10px;
@@ -211,7 +210,6 @@
     }
     .tag:hover{ border-color: rgba(167,139,250,.60); }
 
-    /* lists */
     .list{
       margin:0;
       padding-left: 18px;
@@ -228,7 +226,6 @@
       margin-bottom: 12px;
     }
 
-    /* status line */
     .status{
       margin-top: 14px;
       padding: 12px;
@@ -242,6 +239,7 @@
       gap:10px;
       align-items:center;
     }
+
     .pill{
       padding:4px 8px;
       border-radius:999px;
@@ -252,7 +250,6 @@
     }
     .pill b{ color: var(--ok); font-weight: 700; }
 
-    /* sidebar buttons */
     .btn{
       display:flex;
       align-items:center;
@@ -261,12 +258,13 @@
       padding:10px 12px;
       margin:8px 0;
       border-radius:12px;
-      background: var(--panel2);
+      background: rgba(15,16,32,.75);
       border: 1px solid rgba(167,139,250,.20);
       color: rgba(244,244,255,.92);
       text-decoration:none;
       transition: transform .12s ease, border-color .12s ease, background .12s ease;
     }
+
     .btn:hover{
       transform: translateY(-1px);
       border-color: rgba(167,139,250,.55);
@@ -274,11 +272,13 @@
       text-decoration:none;
       color: rgba(244,244,255,.98);
     }
+
     .btn span{
       opacity:.72;
       font-size:12px;
       color: rgba(244,244,255,.66);
     }
+
     .sectionTitle{
       margin-top:6px;
       color: rgba(244,244,255,.84);
@@ -306,7 +306,7 @@
         </div>
       </div>
 
-      <nav class="nav">
+      <nav class="nav" aria-label="Primary navigation">
         <a class="chip" href="/blog/">Lab Notes</a>
         <a class="chip" href="/projects/">Projects</a>
         <a class="chip" href="/diagrams/">Diagrams</a>
@@ -319,6 +319,7 @@
       <main class="card">
         <div class="pad">
 
+          <!-- SINGLE PAGE H1 -->
           <h1>Home Lab, Networking &amp; Systems Engineering Sandbox</h1>
 
           <p>
@@ -345,6 +346,7 @@
 
           <div class="rule"></div>
 
+          <!-- H2s preserved -->
           <h2>What This Lab Covers</h2>
           <p>
             Practical infrastructure engineering: VLAN segmentation, firewall policy design,
