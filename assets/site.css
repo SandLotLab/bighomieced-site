@@ -133,7 +133,12 @@ h1 { font-size: 28px; font-weight: 700; letter-spacing: -.5px; margin: 0 0 14px;
 h2 { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .10em; margin: 18px 0 8px; color: var(--muted); }
 h3 { font-size: 14px; font-weight: 600; margin: 14px 0 6px; color: var(--text); }
 
-p { font-size: 13px; line-height: 1.7; color: var(--muted); margin: 0 0 16px; }
+p {
+  font-size: 13px;
+  line-height: 1.55;   /* was 1.7 */
+  color: var(--muted);
+  margin: 0 0 10px;    /* was 16px */
+}
 
 a {
   color: var(--accent2);
@@ -251,6 +256,6 @@ footer {
     rgba(167,139,250,.35),
     transparent
   );
-  margin: 22px 0;
+  margin: 14px 0;   /* was 22px */
   opacity: .8;
 }
