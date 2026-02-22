@@ -1,20 +1,18 @@
 <!doctype html>
 <html lang="en">
-<head> 
-
+<head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About — BigHomieCed</title>
 
-  <!-- SEO -->
   <meta name="description" content="About BigHomieCed: a hands-on home lab and systems engineering sandbox documenting networking experiments, firewall architecture, L2/L3 routing labs, infrastructure automation, and real-world build logs." />
   <meta name="robots" content="index,follow" />
-  <link rel="canonical" href="https://bighomieced.app/about.html" />
+  <link rel="canonical" href="https://bighomieced.app/about" />
 
   <meta property="og:title" content="About — BigHomieCed" />
   <meta property="og:description" content="Hands-on lab documentation for networking, firewalls, routing, automation, and infrastructure experiments." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://bighomieced.app/about.html" />
+  <meta property="og:url" content="https://bighomieced.app/about" />
 
   <link rel="stylesheet" href="/assets/site.css">
 
@@ -28,34 +26,33 @@
   <link rel="manifest" href="/site.webmanifest">
 
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "AboutPage",
-  "name": "About BigHomieCed",
-  "url": "https://bighomieced.app/about.html",
-  "description": "A hands-on home lab and systems engineering sandbox documenting networking experiments, firewall architecture, L2/L3 routing labs, infrastructure automation, and build logs."
-}
-</script>
-
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About BigHomieCed",
+    "url": "https://bighomieced.app/about",
+    "description": "A hands-on home lab and systems engineering sandbox documenting networking experiments, firewall architecture, L2/L3 routing labs, infrastructure automation, and build logs."
+  }
+  </script>
 </head>
 
 <body>
   <div class="page">
 
-    <div id="site-header"></div>
-
+    <!-- IMPORTANT: removing header partial load here
+         because your header partial is what’s injecting the “second page” -->
     <main>
       <div class="wrap">
-        <section class="grid" style="grid-template-columns:1fr;">
+        <section style="display:grid; grid-template-columns:1fr;">
           <div class="card">
             <div class="pad">
 
-              <h1 class="h1" style="margin:0;">About</h1>
-              <h2 class="muted" style="margin:2px 0 0 0;font-size:12px;font-weight:normal;">
+              <h1 style="margin:0;">About</h1>
+              <h2 style="margin:2px 0 0 0;font-size:12px;font-weight:normal;color:var(--muted);">
                 Home lab builds. Networking experiments. Systems engineering notes.
               </h2>
 
-              <div class="muted">
+              <div style="color:var(--muted); margin-top:14px; line-height:1.8; font-size:13px;">
 
                 BigHomieCed is a hands-on engineering sandbox documenting how infrastructure is designed, tested, broken, rebuilt, and hardened in a controlled lab environment.
 
@@ -106,9 +103,11 @@
                 BigHomieCed is built for engineers, builders, and technically curious people who want practical lab documentation—networking, firewalls, routing, automation, and systems design—without the noise of a social platform.
 
                 <br><br>
-                For production-ready browser utilities (JSON, JWT, CSP, hashes, UUIDs, log tools), visit: <a href="https://surewhynot.app/">SureWhyNot Dev Studio</a>.
+                For production-ready browser utilities (JSON, JWT, CSP, hashes, UUIDs, log tools), visit:
+                <a href="https://surewhynot.app/">SureWhyNot Dev Studio</a>.
 
               </div>
+
             </div>
           </div>
         </section>
@@ -116,20 +115,12 @@
     </main>
 
     <div id="site-footer"></div>
-
   </div>
 
   <script>
-async function loadPartials() {
-  const header = await fetch('/partials/header.html');
-  const footer = await fetch('/partials/footer.html');
-
-  document.getElementById('site-header').innerHTML = await header.text();
-  document.getElementById('site-footer').innerHTML = await footer.text();
-}
-
-loadPartials();
-</script>
-
+    fetch('/partials/footer.html')
+      .then(r => r.text())
+      .then(html => document.getElementById('site-footer').innerHTML = html);
+  </script>
 </body>
 </html>
