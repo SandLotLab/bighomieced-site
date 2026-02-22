@@ -219,7 +219,6 @@
 </head>
 
 <body>
-  <div id="site-header"></div>
   <main class="card">
 
     <!-- SINGLE H1 (SEO forward) -->
@@ -331,22 +330,6 @@
       </aside>
     </div>
   </main>
-
-  <!-- footer placeholder -->
-  <div id="site-footer"></div>
-  
-  <!-- partial loader -->
-  <script>
-  document.addEventListener("DOMContentLoaded", async function() {
-  const headerRes = await fetch('/partials/header.html');
-  const footerRes = await fetch('/partials/footer.html');
-
-  if (headerRes.ok && footerRes.ok) {
-    document.getElementById('site-header').innerHTML = await headerRes.text();
-    document.getElementById('site-footer').innerHTML = await footerRes.text();
-  }
-});
-  </script>
 
   <!-- Cloudflare Web Analytics -->
   <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
