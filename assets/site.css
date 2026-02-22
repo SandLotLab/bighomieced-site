@@ -258,4 +258,26 @@ footer {
   );
   margin: 14px 0;   /* was 22px */
   opacity: .8;
+  }
+
+/* ===== Mobile footer fix ===== */
+@media (max-width: 700px){
+  .footerwrap{
+    grid-template-columns: 1fr;   /* stop 3-column layout */
+    gap: 10px;
+    padding: 14px 12px;
+    text-align: center;
+  }
+
+  .footer-left,
+  .footer-center,
+  .footerlinks{
+    justify-self: center;         /* prevent edge collisions */
+  }
+
+  .footerlinks{
+    flex-wrap: wrap;              /* allow links to wrap nicely */
+    justify-content: center;
+    gap: 10px;
+  }
 }
