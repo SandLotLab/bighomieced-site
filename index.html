@@ -20,51 +20,54 @@
     :root{
       color-scheme: dark;
 
-      /* Purple/white/black */
+      /* bluish / purpleish / greenish */
       --bg0:#070711;
       --bg1:#0b0b16;
 
-      --border: rgba(255,255,255,.10);
-      --border2: rgba(167,139,250,.26);
-
       --text:#f4f4ff;
-      --muted: rgba(244,244,255,.74);
+      --muted:rgba(244,244,255,.72);
 
-      --p1:#8b5cf6;   /* purple */
-      --p2:#a78bfa;   /* lavender */
-      --p3:#22d3ee;   /* cyan sprinkle */
-      --ok:#76ff7a;
+      --panelA: rgba(255,255,255,.06);
+      --panelB: rgba(12,13,24,.72);
 
-      --shadow: 0 20px 70px rgba(0,0,0,.55);
+      --border: rgba(255,255,255,.10);
+      --borderP: rgba(167,139,250,.26);
+
+      --p1:#8b5cf6;    /* purple */
+      --p2:#a78bfa;    /* lavender */
+      --c1:#22d3ee;    /* cyan */
+      --g1:#76ff7a;    /* green */
+
+      --shadow: 0 18px 60px rgba(0,0,0,.55);
       --r: 18px;
     }
 
     *{ box-sizing:border-box; }
+    html,body{ height:100%; }
 
     body{
       margin:0;
-      min-height:100vh;
       font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
       color: var(--text);
+      background:
+        radial-gradient(900px 600px at 18% 12%, rgba(139,92,246,.22), transparent 55%),
+        radial-gradient(800px 520px at 80% 24%, rgba(34,211,238,.10), transparent 55%),
+        radial-gradient(900px 700px at 52% 88%, rgba(118,255,122,.07), transparent 60%),
+        linear-gradient(180deg, var(--bg0), var(--bg1));
+      padding: 44px 16px;
       display:flex;
       justify-content:center;
-      padding: 44px 16px;
-      background:
-        radial-gradient(900px 600px at 18% 12%, rgba(139,92,246,.24), transparent 55%),
-        radial-gradient(800px 520px at 80% 24%, rgba(34,211,238,.10), transparent 55%),
-        radial-gradient(900px 700px at 52% 88%, rgba(167,139,250,.12), transparent 60%),
-        linear-gradient(180deg, var(--bg0), var(--bg1));
     }
 
-    a{ color: var(--p2); text-decoration: none; }
-    a:hover{ color:#fff; text-decoration: underline; text-decoration-color: rgba(167,139,250,.75); }
+    a{ color: var(--p2); text-decoration:none; }
+    a:hover{ color:#fff; text-decoration:underline; text-decoration-color: rgba(167,139,250,.8); }
 
     .shell{ width: min(1200px, 100%); }
 
-    /* header strip */
+    /* ===== top header: left brand + right pills ===== */
     .top{
       display:flex;
-      align-items:flex-end;
+      align-items:flex-start;
       justify-content:space-between;
       gap:16px;
       margin-bottom: 16px;
@@ -74,30 +77,32 @@
       display:flex;
       align-items:flex-start;
       gap:10px;
+      min-width: 280px;
     }
 
     .dot{
-      width:10px; height:10px; border-radius:999px;
+      width:8px; height:8px; border-radius:999px;
       margin-top: 10px;
       background: radial-gradient(circle at 30% 30%, #fff, var(--p2) 35%, var(--p1) 70%);
-      box-shadow: 0 0 0 4px rgba(167,139,250,.12), 0 0 18px rgba(167,139,250,.35);
+      box-shadow: 0 0 0 4px rgba(167,139,250,.10), 0 0 16px rgba(167,139,250,.30);
       flex: 0 0 auto;
     }
 
-    /* NOT an H1 (keeps single-H1 SEO clean) */
-    .brandTitle{
-      margin:0;
-      font-size: 26px;
-      letter-spacing: -.6px;
-      line-height: 1.15;
+    /* NOT H1 (keeps single-H1 SEO clean) */
+    .brandName{
+      font-size: 20px;
       font-weight: 800;
+      letter-spacing: -.4px;
+      margin:0;
+      line-height:1.2;
     }
 
     .brandSub{
       margin: 6px 0 0;
+      font-size: 11px;
       color: var(--muted);
-      font-size: 12px;
-      max-width: 78ch;
+      max-width: 60ch;
+      line-height: 1.55;
     }
 
     .nav{
@@ -105,33 +110,31 @@
       gap:10px;
       flex-wrap:wrap;
       justify-content:flex-end;
+      align-items:center;
     }
 
-    .chip{
+    .pillLink{
       display:inline-flex;
       align-items:center;
-      gap:8px;
-      padding:10px 12px;
-      border-radius:999px;
+      padding: 9px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
       background: rgba(255,255,255,.04);
-      border:1px solid var(--border);
-      color: var(--text);
+      color: rgba(244,244,255,.92);
+      font-size: 12px;
       text-decoration:none;
-      font-size:12px;
-      white-space:nowrap;
       transition: transform .12s ease, border-color .12s ease, background .12s ease;
     }
-
-    .chip:hover{
+    .pillLink:hover{
       transform: translateY(-1px);
       border-color: rgba(167,139,250,.55);
       background: rgba(167,139,250,.10);
       text-decoration:none;
-      color: var(--text);
+      color: rgba(244,244,255,.98);
     }
 
-    /* main layout */
-    .layout{
+    /* ===== two-card layout (matches your screenshot) ===== */
+    .grid{
       display:grid;
       grid-template-columns: 1.65fr 1fr;
       gap: 16px;
@@ -143,8 +146,8 @@
       background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
       border: 1px solid var(--border);
       box-shadow: var(--shadow);
-      overflow:hidden;
       position: relative;
+      overflow: hidden;
     }
 
     .card::before{
@@ -152,143 +155,148 @@
       position:absolute;
       inset:-2px;
       background:
-        radial-gradient(600px 260px at 18% 0%, rgba(167,139,250,.28), transparent 55%),
-        radial-gradient(520px 240px at 90% 16%, rgba(34,211,238,.10), transparent 55%);
+        radial-gradient(600px 260px at 18% 0%, rgba(167,139,250,.22), transparent 55%),
+        radial-gradient(520px 240px at 90% 16%, rgba(34,211,238,.08), transparent 55%);
       pointer-events:none;
-      opacity:.55;
+      opacity:.6;
       filter: blur(10px);
     }
 
-    .pad{ position:relative; padding: 22px; }
+    .pad{ position:relative; padding: 18px; }
 
-    /* SEO: SINGLE H1 */
+    /* ===== SEO headings (single H1 + multiple H2) ===== */
     h1{
       margin:0 0 10px;
-      font-size: 16px;
+      font-size: 18px;
       letter-spacing: .10em;
       text-transform: uppercase;
-      color: rgba(244,244,255,.90);
+      color: rgba(244,244,255,.92);
     }
 
     h2{
-      margin: 20px 0 10px;
-      font-size: 13px;
-      letter-spacing: .10em;
+      margin: 18px 0 10px;
+      font-size: 12px;
+      letter-spacing: .12em;
       text-transform: uppercase;
-      color: rgba(244,244,255,.86);
+      color: rgba(244,244,255,.78);
     }
 
     h3{
-      margin: 14px 0 6px;
-      font-size: 14px;
-      color: var(--text);
-      letter-spacing: -.2px;
+      margin: 12px 0 6px;
+      font-size: 13px;
+      color: rgba(244,244,255,.92);
+      letter-spacing: -.1px;
     }
 
     p{
-      margin:0 0 14px;
-      line-height: 1.7;
+      margin:0 0 12px;
+      font-size: 12px;
+      line-height: 1.65;
       color: var(--muted);
-      font-size: 13px;
     }
 
     .rule{
       height:1px;
       background: linear-gradient(90deg, rgba(167,139,250,.55), rgba(255,255,255,.10), rgba(34,211,238,.20));
-      opacity:.7;
+      opacity:.65;
       margin: 14px 0;
     }
 
-    .tags{ display:flex; flex-wrap:wrap; gap:10px; margin: 14px 0 6px; }
+    /* ===== tags row (screenshot vibe) ===== */
+    .tags{ display:flex; flex-wrap:wrap; gap:10px; margin: 12px 0 10px; }
     .tag{
-      padding:7px 10px;
-      font-size:12px;
-      border-radius:10px;
+      padding: 6px 10px;
+      font-size: 11px;
+      border-radius: 10px;
       background: rgba(139,92,246,.10);
       border: 1px solid rgba(167,139,250,.28);
-      color: rgba(244,244,255,.92);
+      color: rgba(244,244,255,.90);
+      white-space:nowrap;
     }
     .tag:hover{ border-color: rgba(167,139,250,.60); }
 
-    .list{
-      margin:0;
-      padding-left: 18px;
-      color: var(--muted);
-      line-height: 1.8;
-      font-size: 13px;
-    }
-    .list li{ margin: 6px 0; }
-
-    .kicker{
-      font-size: 12px;
-      color: rgba(244,244,255,.66);
-      margin-top: -6px;
-      margin-bottom: 12px;
-    }
-
+    /* ===== status strip ===== */
     .status{
-      margin-top: 14px;
-      padding: 12px;
-      border-radius: 14px;
-      background: rgba(0,0,0,.25);
-      border: 1px solid rgba(167,139,250,.18);
-      color: rgba(244,244,255,.80);
-      font-size: 12px;
       display:flex;
       flex-wrap:wrap;
       gap:10px;
       align-items:center;
-    }
-
-    .pill{
-      padding:4px 8px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.04);
+      padding: 10px 12px;
+      border-radius: 12px;
+      background: rgba(0,0,0,.22);
+      border: 1px solid rgba(167,139,250,.16);
+      font-size: 11px;
       color: rgba(244,244,255,.78);
-      font-size:11px;
+      margin-top: 10px;
     }
-    .pill b{ color: var(--ok); font-weight: 700; }
+    .status b{ color: var(--g1); font-weight:800; }
 
-    .btn{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
-      padding:10px 12px;
-      margin:8px 0;
-      border-radius:12px;
-      background: rgba(15,16,32,.75);
-      border: 1px solid rgba(167,139,250,.20);
-      color: rgba(244,244,255,.92);
-      text-decoration:none;
-      transition: transform .12s ease, border-color .12s ease, background .12s ease;
+    /* ===== lists ===== */
+    .list{
+      margin: 0;
+      padding-left: 16px;
+      font-size: 12px;
+      line-height: 1.8;
+      color: var(--muted);
     }
+    .list li{ margin: 6px 0; }
 
-    .btn:hover{
-      transform: translateY(-1px);
-      border-color: rgba(167,139,250,.55);
-      background: rgba(139,92,246,.16);
-      text-decoration:none;
-      color: rgba(244,244,255,.98);
+    .kicker{
+      font-size: 11px;
+      color: rgba(244,244,255,.62);
+      margin-top: -4px;
+      margin-bottom: 10px;
     }
 
-    .btn span{
-      opacity:.72;
-      font-size:12px;
-      color: rgba(244,244,255,.66);
-    }
-
-    .sectionTitle{
-      margin-top:6px;
-      color: rgba(244,244,255,.84);
-      font-size:12px;
-      letter-spacing:.10em;
+    /* ===== sidebar: match screenshot sections + dividers ===== */
+    .sideSectionTitle{
+      margin: 0 0 10px;
+      font-size: 12px;
+      letter-spacing: .12em;
       text-transform: uppercase;
+      color: rgba(244,244,255,.78);
+    }
+
+    .sideList{
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .sideList li{
+      margin: 6px 0;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    /* sidebar items look like clean lines, not pills */
+    .sideList a{
+      display:inline-block;
+      padding: 2px 0;
+      color: rgba(167,139,250,.95);
+      text-decoration:none;
+      border-bottom: 1px dotted rgba(167,139,250,.30);
+    }
+    .sideList a:hover{
+      color:#fff;
+      border-bottom-color: rgba(255,255,255,.65);
+      text-decoration:none;
+    }
+
+    .sideDivider{
+      height:1px;
+      background: rgba(255,255,255,.10);
+      margin: 12px 0;
+    }
+
+    .miniNote{
+      font-size: 11px;
+      color: rgba(244,244,255,.62);
+      margin-top: 10px;
     }
 
     @media (max-width: 980px){
-      .layout{ grid-template-columns: 1fr; }
+      .grid{ grid-template-columns: 1fr; }
       .nav{ justify-content:flex-start; }
     }
   </style>
@@ -297,29 +305,30 @@
 <body>
   <div class="shell">
 
-    <div class="top">
+    <!-- matches your screenshot: brand on left, pills on right -->
+    <header class="top">
       <div class="brand">
         <div class="dot"></div>
         <div>
-          <div class="brandTitle">BigHomieCed</div>
+          <div class="brandName">BigHomieCed</div>
           <p class="brandSub">Hands-on labs, networking experiments, firewall configurations, automation builds, and systems engineering projects.</p>
         </div>
       </div>
 
       <nav class="nav" aria-label="Primary navigation">
-        <a class="chip" href="/blog/">Lab Notes</a>
-        <a class="chip" href="/projects/">Projects</a>
-        <a class="chip" href="/diagrams/">Diagrams</a>
+        <a class="pillLink" href="/blog/">Lab Notes</a>
+        <a class="pillLink" href="/projects/">Projects</a>
+        <a class="pillLink" href="/diagrams/">Diagrams</a>
       </nav>
-    </div>
+    </header>
 
-    <div class="layout">
+    <div class="grid">
 
-      <!-- MAIN CONTENT -->
+      <!-- LEFT MAIN CARD: layout + SEO vibe from screenshot -->
       <main class="card">
         <div class="pad">
 
-          <!-- SINGLE PAGE H1 -->
+          <!-- SINGLE H1 (SEO forward) -->
           <h1>Home Lab, Networking &amp; Systems Engineering Sandbox</h1>
 
           <p>
@@ -339,14 +348,15 @@
           </div>
 
           <div class="status">
-            <span class="pill">status: <b>online</b></span>
-            <span class="pill">mode: build / break / rebuild</span>
-            <span class="pill">tls: required (.app)</span>
+            <span>status: <b>online</b></span>
+            <span>·</span>
+            <span>mode: build / break / rebuild</span>
+            <span>·</span>
+            <span>tls: required (.app)</span>
           </div>
 
           <div class="rule"></div>
 
-          <!-- H2s preserved -->
           <h2>What This Lab Covers</h2>
           <p>
             Practical infrastructure engineering: VLAN segmentation, firewall policy design,
@@ -400,33 +410,42 @@
         </div>
       </main>
 
-      <!-- SIDEBAR -->
+      <!-- RIGHT SIDEBAR CARD: screenshot-style sections -->
       <aside class="card">
         <div class="pad">
-          <h2>SureWhyNot Tools</h2>
+          <div class="sideSectionTitle">SureWhyNot Tools</div>
+          <ul class="sideList">
+            <li><a href="https://surewhynot.app/json-formatter.html">JSON Formatter</a></li>
+            <li><a href="https://surewhynot.app/json-to-typescript.html">JSON to TypeScript</a></li>
+            <li><a href="https://surewhynot.app/jwt-decoder.html">JWT Decoder</a></li>
+            <li><a href="https://surewhynot.app/csp-analyzer.html">CSP Analyzer</a></li>
+            <li><a href="https://surewhynot.app/hash-generator.html">Hash Generator</a></li>
+            <li><a href="https://surewhynot.app/uuid-generator.html">UUID Generator</a></li>
+            <li><a href="https://surewhynot.app/log-explorer.html">Log Explorer</a></li>
+          </ul>
 
-          <a class="btn" href="https://surewhynot.app/json-formatter.html">JSON Formatter <span>tool</span></a>
-          <a class="btn" href="https://surewhynot.app/json-to-typescript.html">JSON to TypeScript <span>tool</span></a>
-          <a class="btn" href="https://surewhynot.app/jwt-decoder.html">JWT Decoder <span>tool</span></a>
-          <a class="btn" href="https://surewhynot.app/csp-analyzer.html">CSP Analyzer <span>tool</span></a>
-          <a class="btn" href="https://surewhynot.app/hash-generator.html">Hash Generator <span>tool</span></a>
-          <a class="btn" href="https://surewhynot.app/uuid-generator.html">UUID Generator <span>tool</span></a>
-          <a class="btn" href="https://surewhynot.app/log-explorer.html">Log Explorer <span>tool</span></a>
+          <div class="sideDivider"></div>
 
-          <div class="rule"></div>
+          <div class="sideSectionTitle">Games</div>
+          <ul class="sideList">
+            <li><a href="https://surewhynot.app/galactica.html">Galactica</a></li>
+            <li><a href="https://surewhynot.app/roguelike.html">Roguelike</a></li>
+          </ul>
 
-          <div class="sectionTitle">Games</div>
-          <a class="btn" href="https://surewhynot.app/galactica.html">Galactica <span>game</span></a>
-          <a class="btn" href="https://surewhynot.app/roguelike.html">Roguelike <span>game</span></a>
+          <div class="sideDivider"></div>
 
-          <div class="rule"></div>
+          <div class="sideSectionTitle">Fuel The Infrastructure</div>
+          <ul class="sideList">
+            <li><a href="https://surewhynot.app/infrastructure.html">Fuel The Infrastructure</a></li>
+          </ul>
 
-          <div class="sectionTitle">Fuel The Infrastructure</div>
-          <a class="btn" href="https://surewhynot.app/infrastructure.html">Fuel The Infrastructure <span>support</span></a>
+          <div class="sideDivider"></div>
 
-          <div class="rule"></div>
+          <ul class="sideList">
+            <li><a href="https://surewhynot.app/">SureWhyNot Dev Studio</a></li>
+          </ul>
 
-          <a class="btn" href="https://surewhynot.app/">SureWhyNot Dev Studio <span>home</span></a>
+          <div class="miniNote">Links open in the same tab (change to target=&quot;_blank&quot; if you want).</div>
         </div>
       </aside>
 
