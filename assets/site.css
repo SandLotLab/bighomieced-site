@@ -239,4 +239,17 @@ footer {
     font-size: 10px;
     letter-spacing: 1.2px;
   }
+
+/* ================= SECTION DIVIDER ================= */
+
+.hr{
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(167,139,250,.35),
+    transparent
+  );
+  margin: 22px 0;
+  opacity: .8;
 }
