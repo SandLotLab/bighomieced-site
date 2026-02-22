@@ -1,6 +1,5 @@
 /* ============================== */
 /* BigHomieCed — Kosmo Themed CSS */
-/* Drag-and-drop replace site.css */
 /* ============================== */
 
 /* Palette */
@@ -44,6 +43,7 @@ body {
   justify-content: center;
 }
 
+/* Home button */
 .home-btn{
   display:inline-block;
   margin: 0 0 14px;
@@ -60,90 +60,6 @@ body {
   color:#fff;
   background: rgba(139,92,246,.22);
   text-decoration: none;
-}
-
-/* Main container */
-.page {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  width: 100%;
-}
-
-/* Header */
-header {
-  position: sticky;
-  top: 0;
-  background: rgba(7,7,17,.88);
-  backdrop-filter: blur(10px);
-  z-index: 10;
-}
-
-header .wrap {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 12px 0;
-  border-bottom: 1px solid rgba(255,255,255,.08);
-}
-
-header .brand {
-  font-size: 22px;
-  font-weight: 800;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-header .brand .dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 999px;
-  background: radial-gradient(circle at 30% 30%, #fff, var(--accent2) 35%, var(--accent1) 70%);
-  box-shadow: 0 0 0 6px rgba(167,139,250,.10), 0 0 18px rgba(167,139,250,.22);
-}
-
-header .subtitle {
-  margin-top: 2px;
-  color: var(--muted);
-  font-size: 12px;
-}
-
-/* Nav */
-.navcenter {
-  margin-top: 8px;
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.pill {
-  padding: 8px 12px;
-  font-size: 13px;
-  text-decoration: none;
-  border-radius: 12px;
-  border: 1px solid var(--border);
-  background: var(--panel2);
-  color: var(--text);
-  transition: background .12s ease, border .12s ease;
-}
-
-.pill:hover {
-  background: rgba(139,92,246,.12);
-  border-color: rgba(167,139,250,.35);
-}
-
-.pill.active {
-  border-color: var(--accent3);
-  box-shadow: 0 0 0 2px var(--accent3);
-}
-
-/* Content wrap */
-.wrap {
-  width: min(1120px, 92vw);
-  margin: auto;
-  flex-grow: 1;
 }
 
 /* Cards */
@@ -168,15 +84,11 @@ header .subtitle {
   filter: blur(10px);
 }
 
-/* Utility */
-.pad { padding: 18px; position: relative; }
-
-/* Headings */
+/* Text */
 h1 { font-size: 28px; font-weight: 700; letter-spacing: -.5px; margin: 0 0 14px; }
 h2 { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .10em; margin: 18px 0 8px; color: var(--muted); }
 h3 { font-size: 14px; font-weight: 600; margin: 14px 0 6px; color: var(--text); }
 
-/* Text */
 p { font-size: 13px; line-height: 1.7; color: var(--muted); margin: 0 0 16px; }
 
 a {
@@ -238,14 +150,14 @@ footer {
   color: var(--muted);
 }
 
+/* Right-aligned link group */
 .footerlinks {
-  justify-self: end;
   display: flex;
   gap: 10px;
-  flex-wrap: wrap;
+  justify-self: end;
 }
 
-/* Works whether you use .footerbottom OR your inline-styled last div */
+/* Bottom line */
 .footerbottom,
 .footerwrap > div:last-child {
   grid-column: 1 / -1;
