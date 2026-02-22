@@ -1,34 +1,238 @@
-<!-- /partials/header.html -->
-<header>
-  <div class="wrap">
-    <div class="topbar">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-      <!-- Brand / Title -->
-      <div class="brand">
-        <span class="dot"></span>
-        BigHomieCed — Lab Sandbox
-      </div>
+  <title>BigHomieCed | Home Lab, Networking & Systems Engineering Sandbox</title>
+  <meta name="description" content="Hands-on home lab builds, networking experiments, firewall configurations, L2/L3 routing labs, automation projects, and systems engineering documentation." />
 
-      <!-- Subtitle -->
-      <div class="subtitle">
-        Home lab builds · networking experiments · systems engineering notes
-      </div>
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0b0b12">
 
-      <!-- Infrastructure Link -->
-      <a class="infra-link" href="https://surewhynot.app/infrastructure.html">
-        Fuel The Infrastructure
-      </a>
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7167291111213614"
+    crossorigin="anonymous"></script>
 
+  <style>
+
+    /* ===== GLOBAL BODY ===== */
+
+    :root {
+      color-scheme: dark;
+      --bg0:#070711;
+      --bg1:#0b0b16;
+      --text:#f4f4ff;
+      --muted:rgba(244,244,255,.74);
+      --p2:#a78bfa;
+      --border:rgba(255,255,255,.10);
+      --border2:rgba(167,139,250,.26);
+      --panel2:rgba(15,16,32,.75);
+      --shadow:0 20px 70px rgba(0,0,0,.55);
+      --r:14px;
+    }
+
+    * { box-sizing:border-box; }
+
+    body {
+      margin:0;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      background:
+        radial-gradient(900px 600px at 18% 12%, rgba(139,92,246,.24), transparent 55%),
+        radial-gradient(800px 520px at 80% 24%, rgba(34,211,238,.10), transparent 55%),
+        linear-gradient(180deg, var(--bg0), var(--bg1));
+      color:var(--text);
+    }
+
+    a {
+      color:var(--p2);
+      text-decoration:none;
+    }
+    a:hover {
+      text-decoration:underline;
+    }
+
+    /* ===== HEADER, FOOTER ===== */
+
+    #site-header, #site-footer {
+      width:100%;
+      display:block;
+      text-align:center;
+      margin:0 auto;
+      padding:12px 0;
+    }
+
+    /* OPTIONAL: center the header partial links nicely */
+    #site-header .wrap {
+      display:flex;
+      justify-content:center;
+      gap:16px;
+      flex-wrap:wrap;
+      font-size:14px;
+      padding:16px;
+      color:var(--muted);
+    }
+
+    /* ===== MAIN CONTENT CARD ===== */
+
+    main.card {
+      background:var(--panel2);
+      border:1px solid var(--border);
+      border-radius:var(--r);
+      box-shadow:var(--shadow);
+      width:min(1120px, calc(100% - 32px));
+      margin:32px auto;
+      padding:30px;
+    }
+
+    h1 {
+      font-size:28px;
+      margin:0 0 12px;
+    }
+    p {
+      margin:0 0 16px;
+      line-height:1.65;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .tags {
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin:12px 0;
+    }
+    .tag {
+      padding:6px 10px;
+      font-size:12px;
+      border-radius:999px;
+      border:1px solid var(--border2);
+      background:rgba(139,92,246,.10);
+    }
+
+    .layout {
+      display:grid;
+      grid-template-columns:1fr 280px;
+      gap:24px;
+      margin-top:12px;
+    }
+
+    h2 {
+      font-size:12px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      margin:18px 0 8px;
+      color:rgba(244,244,255,.82);
+    }
+    .list {
+      margin:0;
+      padding-left:18px;
+      font-size:13px;
+      line-height:1.75;
+      color:var(--muted);
+    }
+    .list li { margin:6px 0; }
+
+    .panel-box {
+      border:1px solid var(--border2);
+      border-radius:var(--r);
+      padding:12px;
+      margin-top:12px;
+    }
+
+    .status {
+      margin-top:14px;
+      padding:12px;
+      font-size:12px;
+      background:rgba(0,0,0,.22);
+      border:1px solid rgba(167,139,250,.16);
+      border-radius:var(--r);
+      color:var(--muted);
+    }
+    .status b { color:var(--p2); font-weight:700; }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER PRECISELY WHERE IT SHOULD BE -->
+  <div id="site-header"></div>
+
+  <!-- MAIN CONTENT -->
+  <main class="card">
+
+    <h1>Home Lab, Networking &amp; Systems Engineering Sandbox</h1>
+
+    <p>BigHomieCed is a hands-on lab for network segmentation, firewall architecture, L2/L3 routing experiments, infrastructure automation, and systems testing.</p>
+
+    <div class="tags">
+      <span class="tag">labs</span>
+      <span class="tag">sandboxes</span>
+      <span class="tag">networking</span>
+      <span class="tag">L2 / L3</span>
+      <span class="tag">firewalls</span>
+      <span class="tag">systems</span>
+      <span class="tag">automation</span>
+      <span class="tag">code</span>
     </div>
 
-    <!-- Navigation -->
-    <nav class="navcenter" aria-label="Primary navigation">
-      <a class="pill" href="/">Home</a>
-      <a class="pill" href="/projects/">Projects</a>
-      <a class="pill" href="/blog/">Lab Notes</a>
-      <a class="pill" href="/diagrams/">Diagrams</a>
-      <a class="pill" href="https://surewhynot.app/">SureWhyNot Tools</a>
-    </nav>
+    <div class="layout">
 
-  </div>
-</header>
+      <div>
+        <h2>What This Lab Covers</h2>
+        <ul class="list">
+          <li><a href="/projects/home-lab-architecture.html">Home Lab Architecture &amp; Virtualization</a></li>
+          <li><a href="/projects/network-segmentation-vlans.html">Network Segmentation with VLANs</a></li>
+          <li><a href="/projects/firewall-policy-design.html">Firewall Policy Design &amp; Hardening</a></li>
+          <li><a href="/projects/l2-l3-routing-labs.html">Layer 2 / Layer 3 Routing Labs</a></li>
+          <li><a href="/projects/automation-pipelines.html">Infrastructure Automation Projects</a></li>
+          <li><a href="/projects/zero-trust-experiment.html">Zero Trust Network Experiments</a></li>
+        </ul>
+
+        <h2>Featured Engineering Builds</h2>
+        <div class="panel-box">
+          <h3><a href="/projects/segmented-home-lab-build.html">Designing a Segmented Home Lab from Scratch</a></h3>
+          <p class="kicker">Placeholder — add diagrams, VLAN plan, routing table, firewall zones, and validation tests.</p>
+          <h3><a href="/projects/firewall-from-zero.html">Building a Deny-by-Default Firewall Policy</a></h3>
+          <p class="kicker">Placeholder — add rule strategy, logging schema, and break/fix notes.</p>
+        </div>
+
+        <h2>Lab Notes &amp; Build Logs</h2>
+        <ul class="list">
+          <li><a href="/blog/designing-vlan-segmentation.html">Designing VLAN Segmentation</a></li>
+          <li><a href="/blog/firewall-rule-mistakes.html">Firewall Rule Design Mistakes</a></li>
+        </ul>
+
+        <div class="status">
+          status: <b>online</b> · TLS required (.app)
+        </div>
+      </div>
+
+      <aside>
+        <h2>SureWhyNot Tools</h2>
+        <ul class="list">
+          <li><a href="https://surewhynot.app/json-formatter.html">JSON Formatter</a></li>
+          <li><a href="https://surewhynot.app/json-to-typescript.html">JSON to TypeScript</a></li>
+        </ul>
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- FOOTER PRECISELY WHERE IT SHOULD BE -->
+  <div id="site-footer"></div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", async function() {
+      const headerRes = await fetch('/partials/header.html');
+      const footerRes = await fetch('/partials/footer.html');
+      if (headerRes.ok && footerRes.ok) {
+        document.getElementById('site-header').innerHTML = await headerRes.text();
+        document.getElementById('site-footer').innerHTML = await footerRes.text();
+      }
+    });
+  </script>
+
+</body>
+</html>
