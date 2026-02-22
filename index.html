@@ -17,34 +17,24 @@
     crossorigin="anonymous"></script>
 
   <style>
-    :root{
+    :root {
       color-scheme: dark;
-
-      /* YOUR bluish / purpleish / greenish scheme */
       --bg0:#070711;
       --bg1:#0b0b16;
-
-      --panel: rgba(255,255,255,.06);
-      --panel2: rgba(15,16,32,.75);
-
-      --border: rgba(255,255,255,.10);
-      --border2: rgba(167,139,250,.26);
-
       --text:#f4f4ff;
       --muted: rgba(244,244,255,.74);
-
-      --p1:#8b5cf6;   /* purple */
-      --p2:#a78bfa;   /* lavender */
-      --p3:#22d3ee;   /* cyan sprinkle */
-      --ok:#76ff7a;   /* green */
-
+      --p1:#8b5cf6;
+      --p2:#a78bfa;
+      --p3:#22d3ee;
+      --ok:#76ff7a;
+      --border: rgba(255,255,255,.10);
       --shadow: 0 20px 70px rgba(0,0,0,.55);
       --r: 18px;
     }
 
     *{ box-sizing:border-box; }
 
-    body{
+    body {
       margin:0;
       min-height:100vh;
       display:grid;
@@ -59,8 +49,7 @@
         linear-gradient(180deg, var(--bg0), var(--bg1));
     }
 
-    /* OUTER CARD (matches your screenshot layout) */
-    .card{
+    .card {
       width: min(1120px, calc(100vw - 32px));
       padding: 30px 30px 24px;
       border-radius: var(--r);
@@ -70,8 +59,7 @@
       position: relative;
       overflow: hidden;
     }
-
-    .card::before{
+    .card::before {
       content:"";
       position:absolute;
       inset:-2px;
@@ -83,17 +71,14 @@
       filter: blur(10px);
     }
 
-    .card > *{ position:relative; }
-
-    /* SEO: single H1 (keep as the big page title like your screenshot) */
-    h1{
+    h1 {
       margin: 0 0 10px;
       font-size: 28px;
       letter-spacing: -0.4px;
       color: rgba(244,244,255,.96);
     }
 
-    p{
+    p {
       margin: 0 0 16px;
       line-height: 1.65;
       color: var(--muted);
@@ -101,8 +86,7 @@
       max-width: 95ch;
     }
 
-    /* Tags row (same placement as screenshot) */
-    .tags{
+    .tags {
       display:flex;
       flex-wrap:wrap;
       gap:10px;
@@ -118,7 +102,6 @@
       white-space: nowrap;
     }
 
-    /* Two-column interior layout (left content + right sidebar) */
     .layout{
       display:grid;
       grid-template-columns: 1fr 320px;
@@ -127,103 +110,75 @@
       margin-top: 12px;
     }
 
-    /* Headings (same H2 vibe as before) */
-    h2{
+    h2 {
       margin: 18px 0 10px;
       font-size: 12px;
-      letter-spacing: .12em;
+      letter-spacing:.12em;
       text-transform: uppercase;
       color: rgba(244,244,255,.82);
     }
 
-    h3{
-      margin: 14px 0 6px;
-      font-size: 14px;
-      color: rgba(244,244,255,.94);
-      letter-spacing: -0.2px;
-    }
-
-    a{
+    a {
       color: var(--p2);
-      text-decoration: none;
+      text-decoration:none;
     }
-    a:hover{
-      color:#fff;
-      text-decoration: underline;
+    a:hover {
+      text-decoration:underline;
       text-decoration-color: rgba(167,139,250,.75);
     }
 
-    .list{
-      margin: 0;
-      padding-left: 18px;
+    .list {
+      margin:0;
+      padding-left:18px;
       color: var(--muted);
-      line-height: 1.8;
-      font-size: 13px;
+      line-height:1.8;
+      font-size:13px;
     }
-    .list li{ margin: 6px 0; }
+    .list li { margin:6px 0; }
 
-    .kicker{
-      font-size: 12px;
-      color: rgba(244,244,255,.66);
-      margin-top: -6px;
-      margin-bottom: 12px;
-    }
-
-    /* Inner “featured builds” panel (same as your old content block) */
-    .panel{
-      border-radius: 14px;
+    .panel {
+      border-radius:14px;
       background: rgba(15,16,32,.45);
-      border: 1px solid rgba(255,255,255,.10);
-      padding: 14px;
+      border:1px solid rgba(255,255,255,.10);
+      padding:14px;
     }
 
-    /* Divider line */
-    .divider{
-      height: 1px;
-      background: rgba(255,255,255,.10);
-      margin: 14px 0;
+    .divider {
+      height:1px;
+      background:rgba(255,255,255,.10);
+      margin:14px 0;
     }
 
-    /* Status bar at bottom (like screenshot) */
     .status{
       margin-top: 18px;
       padding: 12px;
       border-radius: 12px;
       background: rgba(0,0,0,.22);
-      border: 1px solid rgba(167,139,250,.16);
-      font-size: 12px;
+      border:1px solid rgba(167,139,250,.16);
+      font-size:12px;
       color: rgba(244,244,255,.78);
     }
-    .status b{ color: var(--ok); font-weight: 800; }
+    .status b{ color: var(--ok); font-weight:800; }
 
-    /* Sidebar panel matches screenshot (simple list, not big buttons) */
     .side{
-      border-radius: 14px;
+      border-radius:14px;
       background: rgba(15,16,32,.45);
-      border: 1px solid rgba(255,255,255,.10);
-      padding: 14px;
+      border:1px solid rgba(255,255,255,.10);
+      padding:14px;
     }
 
-    .side h2{ margin-top: 0; }
-
-    /* Sidebar bullets look clean and compact */
-    .side .list{
-      font-size: 12px;
-      padding-left: 16px;
-    }
-
-    @media (max-width: 900px) {
-      .layout { grid-template-columns: 1fr; }
+    @media (max-width: 900px){
+      .layout { grid-template-columns:1fr; }
     }
   </style>
 </head>
 
 <body>
-  <div id="site-header"></div>
-  
-  <main class="card">
 
-    <!-- SINGLE H1 (SEO forward) -->
+  <!-- HEADER LOAD TARGET -->
+  <div id="site-header"></div>
+
+  <main class="card">
     <h1>Home Lab, Networking &amp; Systems Engineering Sandbox</h1>
 
     <p>
@@ -243,70 +198,43 @@
     </div>
 
     <div class="layout">
-      <!-- LEFT MAIN CONTENT (same wording/sections) -->
       <section>
         <h2>What This Lab Covers</h2>
-        <p>
-          Practical infrastructure engineering: VLAN segmentation, firewall policy design,
-          routing labs, zero-trust experiments, automation pipelines, and hardening patterns.
-        </p>
-
         <ul class="list">
           <li><a href="/projects/home-lab-architecture.html">Home Lab Architecture &amp; Virtualization</a></li>
           <li><a href="/projects/network-segmentation-vlans.html">Network Segmentation with VLANs</a></li>
           <li><a href="/projects/firewall-policy-design.html">Firewall Policy Design &amp; Hardening</a></li>
           <li><a href="/projects/l2-l3-routing-labs.html">Layer 2 / Layer 3 Routing Labs</a></li>
           <li><a href="/projects/automation-pipelines.html">Infrastructure Automation Projects</a></li>
-          <li><a href="/projects/zero-trust-experiment.html">Zero Trust Network Experiments</a></li>
+          <li><a href="/projects/zero-trust-experiment.html">Zero Trust Experiments</a></li>
         </ul>
 
         <h2>Featured Engineering Builds</h2>
-
         <div class="panel">
-          <h3><a href="/projects/segmented-home-lab-build.html">Designing a Segmented Home Lab from Scratch</a></h3>
-          <p class="kicker">Placeholder — add diagrams, VLAN plan, routing table, firewall zones, and validation tests.</p>
+          <h3><a href="/projects/segmented-home-lab-build.html">Segmented Home Lab Build</a></h3>
+          <p class="kicker">Placeholder — add diagrams and tests.</p>
 
-          <h3><a href="/projects/firewall-from-zero.html">Building a Deny-by-Default Firewall Policy</a></h3>
-          <p class="kicker">Placeholder — add rule strategy, logging schema, and break/fix notes.</p>
+          <h3><a href="/projects/firewall-from-zero.html">Deny-by-Default Firewall Policy</a></h3>
+          <p class="kicker">Placeholder — add rule strategy notes.</p>
 
-          <h3><a href="/projects/tls-inspection-lab.html">TLS Inspection &amp; Encrypted Traffic Testing</a></h3>
-          <p class="kicker">Placeholder — add cert chain approach, client impact, and failure cases.</p>
+          <h3><a href="/projects/tls-inspection-lab.html">TLS Inspection Testing</a></h3>
+          <p class="kicker">Placeholder — add insights and results.</p>
         </div>
 
         <h2>Lab Notes &amp; Build Logs</h2>
-        <p>Build logs focused on what broke, why it broke, and what the fix taught me.</p>
-
         <ul class="list">
-          <li><a href="/blog/designing-vlan-segmentation.html">Designing VLAN Segmentation for a Home Lab</a></li>
-          <li><a href="/blog/firewall-rule-mistakes.html">Firewall Rule Design Mistakes</a></li>
-          <li><a href="/blog/proxmox-lab-setup.html">Setting Up a Proxmox Virtual Lab</a></li>
-          <li><a href="/blog/automating-config-backups.html">Automating Network Configuration Backups</a></li>
-          <li><a href="/blog/">View All Lab Notes</a></li>
+          <li><a href="/blog/designing-vlan-segmentation.html">Designing VLAN Segmentation</a></li>
+          <li><a href="/blog/firewall-rule-mistakes.html">Firewall Rule Mistakes</a></li>
+          <li><a href="/blog/proxmox-lab-setup.html">Proxmox Lab Setup</a></li>
         </ul>
-
-        <h2>Network Diagrams &amp; Lab Topology</h2>
-        <ul class="list">
-          <li><a href="/diagrams/home-lab-topology.html">Current Home Lab Topology</a></li>
-          <li><a href="/diagrams/firewall-zone-design.html">Firewall Zone Architecture</a></li>
-          <li><a href="/diagrams/routing-flow-analysis.html">Routing Flow &amp; Packet Path Analysis</a></li>
-        </ul>
-
-        <div class="status">
-          status: <b>online</b> · mode: build / break / rebuild · tls: required (.app)
-        </div>
       </section>
 
-      <!-- RIGHT SIDEBAR (same structure as screenshot: simple lists + dividers) -->
       <aside class="side">
         <h2>SureWhyNot Tools</h2>
         <ul class="list">
           <li><a href="https://surewhynot.app/json-formatter.html">JSON Formatter</a></li>
           <li><a href="https://surewhynot.app/json-to-typescript.html">JSON to TypeScript</a></li>
           <li><a href="https://surewhynot.app/jwt-decoder.html">JWT Decoder</a></li>
-          <li><a href="https://surewhynot.app/csp-analyzer.html">CSP Analyzer</a></li>
-          <li><a href="https://surewhynot.app/hash-generator.html">Hash Generator</a></li>
-          <li><a href="https://surewhynot.app/uuid-generator.html">UUID Generator</a></li>
-          <li><a href="https://surewhynot.app/log-explorer.html">Log Explorer</a></li>
         </ul>
 
         <div class="divider"></div>
@@ -316,41 +244,33 @@
           <li><a href="https://surewhynot.app/galactica.html">Galactica</a></li>
           <li><a href="https://surewhynot.app/roguelike.html">Roguelike</a></li>
         </ul>
-
-        <div class="divider"></div>
-
-        <h2>Fuel The Infrastructure</h2>
-        <p style="margin:0;">
-          <a href="https://surewhynot.app/infrastructure.html">Fuel The Infrastructure</a>
-        </p>
-
-        <div class="divider"></div>
-
-        <p style="margin:0; font-size:12px; color: var(--muted);">
-          <a href="https://surewhynot.app/">SureWhyNot Dev Studio</a>
-        </p>
       </aside>
     </div>
+
   </main>
 
-  <!-- footer placeholder -->
+  <!-- FOOTER LOAD TARGET -->
   <div id="site-footer"></div>
 
-  <!-- load shared partials -->
+  <!-- partial loader -->
   <script>
-  async function loadPartials() {
-    const header = await fetch('/partials/header.html');
-    const footer = await fetch('/partials/footer.html');
+  document.addEventListener("DOMContentLoaded", async function() {
+    const headerRes = await fetch('/partials/header.html');
+    const footerRes = await fetch('/partials/footer.html');
+    const headerHTML = await headerRes.text();
+    const footerHTML = await footerRes.text();
 
-    document.getElementById('site-header').innerHTML = await header.text();
-    document.getElementById('site-footer').innerHTML = await footer.text();
-  }
+    const headerEl = document.getElementById('site-header');
+    const footerEl = document.getElementById('site-footer');
 
-  loadPartials();
+    if (headerEl) headerEl.innerHTML = headerHTML;
+    if (footerEl) footerEl.innerHTML = footerHTML;
+  });
   </script>
-  
+
   <!-- Cloudflare Web Analytics -->
   <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
     data-cf-beacon='{"token":"4bcdaa7405bf42e1885c19299f95a7de"}'></script>
+
 </body>
 </html>
