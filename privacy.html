@@ -1,20 +1,18 @@
 <!doctype html>
 <html lang="en">
 <head>
-
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Privacy Policy — BigHomieCed</title>
 
-  <!-- SEO -->
   <meta name="description" content="Privacy Policy for BigHomieCed. Learn how information is handled for home lab documentation, networking experiments, site analytics, advertising, and basic site operations." />
   <meta name="robots" content="index,follow" />
-  <link rel="canonical" href="https://bighomieced.app/privacy.html" />
+  <link rel="canonical" href="https://bighomieced.app/privacy" />
 
   <meta property="og:title" content="Privacy Policy — BigHomieCed" />
   <meta property="og:description" content="Privacy policy outlining data handling for lab documentation, analytics, and advertising on BigHomieCed." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://bighomieced.app/privacy.html" />
+  <meta property="og:url" content="https://bighomieced.app/privacy" />
 
   <link rel="stylesheet" href="/assets/site.css">
 
@@ -29,34 +27,33 @@
   <link rel="manifest" href="/site.webmanifest">
 
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "PrivacyPolicy",
-  "name": "Privacy Policy — BigHomieCed",
-  "url": "https://bighomieced.app/privacy.html",
-  "description": "Privacy policy describing data handling for lab documentation, analytics, and advertising on BigHomieCed."
-}
+  {
+    "@context": "https://schema.org",
+    "@type": "PrivacyPolicy",
+    "name": "Privacy Policy — BigHomieCed",
+    "url": "https://bighomieced.app/privacy",
+    "description": "Privacy policy describing data handling for lab documentation, analytics, and advertising on BigHomieCed."
+  }
   </script>
-
 </head>
 
 <body>
   <div class="page">
 
-    <div id="site-header"></div>
+    <!-- IMPORTANT: do NOT load header partial here (that’s what was stacking pages) -->
 
     <main>
       <div class="wrap">
-        <section class="grid" style="grid-template-columns:1fr;">
+        <section style="display:grid; grid-template-columns:1fr;">
           <div class="card">
             <div class="pad">
 
-              <h1 class="h1" style="margin:0;">Privacy Policy</h1>
-              <h2 class="muted" style="margin:2px 0 0 0;font-size:12px;font-weight:normal;">
+              <h1 style="margin:0;">Privacy Policy</h1>
+              <h2 style="margin:2px 0 0 0;font-size:12px;font-weight:normal;color:var(--muted);">
                 Data handling for lab documentation, analytics, and advertising.
               </h2>
 
-              <div class="muted">
+              <div style="color:var(--muted); margin-top:14px; line-height:1.8; font-size:13px;">
 
                 Effective Date: February 21, 2026
                 <br><br>
@@ -167,9 +164,10 @@
 
                 Contact:
                 <br>
-                Privacy questions: <a href="/contact.html" class="kbd">privacy@bighomieced.app</a>
+                Privacy questions: <a href="/contact" class="kbd">privacy@bighomieced.app</a>
 
               </div>
+
             </div>
           </div>
         </section>
@@ -177,19 +175,12 @@
     </main>
 
     <div id="site-footer"></div>
-
   </div>
 
   <script>
-async function loadPartials() {
-  const header = await fetch('/partials/header.html');
-  const footer = await fetch('/partials/footer.html');
-
-  document.getElementById('site-header').innerHTML = await header.text();
-  document.getElementById('site-footer').innerHTML = await footer.text();
-}
-loadPartials();
+    fetch('/partials/footer.html')
+      .then(r => r.text())
+      .then(html => document.getElementById('site-footer').innerHTML = html);
   </script>
-
 </body>
 </html>
