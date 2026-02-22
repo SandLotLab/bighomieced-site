@@ -64,6 +64,9 @@ body {
 
 /* Cards */
 .card {
+  margin: 0 auto;   /* centers the card */
+  width: min(1120px, calc(100vw - 32px));
+
   background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
   border: 1px solid var(--border);
   border-radius: var(--radius);
