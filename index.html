@@ -15,14 +15,14 @@
   <script async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7167291111213614"
     crossorigin="anonymous"></script>
-	
+
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-P8RWSX5N');</script>
-  <!-- End Google Tag Manager -->	
+  <!-- End Google Tag Manager -->
 
   <style>
     :root{
@@ -230,9 +230,8 @@
       .layout { grid-template-columns: 1fr; }
     }
   </style>
+  <link rel="stylesheet" href="/assets/site.css">
 </head>
-
-<link rel="stylesheet" href="/assets/site.css">
 
 <body>
 
@@ -243,44 +242,39 @@
 
   <nav class="top-nav">
   <a class="home-btn" href="/">Home</a>
-  |</span>
   <div class="top-links">
-    <a href="#">labs</a>
+    <a href="#lab-scope">Lab Scope</a>
     <span class="pipe">|</span>
-    <a href="#">sandboxes</a>
+    <a href="#featured-builds">Builds</a>
     <span class="pipe">|</span>
-    <a href="#">networking</a>
+    <a href="#lab-notes">Notes</a>
     <span class="pipe">|</span>
-    <a href="#">L2 / L3</a>
-    <span class="pipe">|</span>
-    <a href="#">firewalls</a>
-    <span class="pipe">|</span>
-    <a href="#">systems</a>
-    <span class="pipe">|</span>
-    <a href="#">automation</a>
-    <span class="pipe">|</span>
-    <a href="#">code</a>
+    <a href="#topology">Topology</a>
   </div>
 </nav>
-  
+
   <main class="card">
     <!-- SINGLE H1 (SEO forward) -->
     <h1>Home Lab, Networking &amp; Systems Engineering Sandbox</h1>
 
     <p>
-  BigHomieCed.app is a live engineering sandbox where I design, break, 
-  and rebuild real infrastructure. This lab focuses on network segmentation, 
-  deny-by-default firewall architecture, Layer 2 and Layer 3 routing design, 
-  secure zone modeling, infrastructure automation, configuration hardening, 
-  and controlled failure testing. Every build documents topology, policy logic, 
-  packet flow, validation methods, and what failed during implementation. 
-  The goal is practical systems engineering—structured, testable, and repeatable.
+  BigHomieCed.app is a public engineering lab focused on practical infrastructure design.
+  Every post is built from real experiments: segment first, enforce policy, test packet flow,
+  break assumptions, then document the fix. If you want applied networking and systems work
+  without tutorial fluff, this is the workspace.
     </p>
+
+    <div class="hero-cta">
+      <a href="#featured-builds">View featured builds</a>
+      <a href="#lab-notes">Read latest lab notes</a>
+    </div>
+
+    <p class="signal">Signal: architecture decisions, validation output, failure notes, and repeatable configurations.</p>
 
        <div class="layout">
       <!-- LEFT MAIN CONTENT (same wording/sections) -->
       <section>
-        <h2>What This Lab Covers</h2>
+        <h2 id="lab-scope">What This Lab Covers</h2>
         <p>
           Practical infrastructure engineering: VLAN segmentation, firewall policy design,
           routing labs, zero-trust experiments, automation pipelines, and hardening patterns.
@@ -295,20 +289,20 @@
           <li><a href="/projects/zero-trust-experiment">Zero Trust Network Experiments</a></li>
         </ul>
 
-        <h2>Featured Engineering Builds</h2>
+        <h2 id="featured-builds">Featured Engineering Builds</h2>
 
         <div class="panel">
           <h3><a href="/projects/segmented-home-lab-build">Designing a Segmented Home Lab from Scratch</a></h3>
-          <p class="kicker">Placeholder — add diagrams, VLAN plan, routing table, firewall zones, and validation tests.</p>
+          <p class="kicker">Build write-up includes topology diagrams, VLAN plan, route intent, zone boundaries, and validation checks.</p>
 
           <h3><a href="/projects/firewall-from-zero">Building a Deny-by-Default Firewall Policy</a></h3>
-          <p class="kicker">Placeholder — add rule strategy, logging schema, and break/fix notes.</p>
+          <p class="kicker">Covers policy strategy, logging model, staged rollout, and break/fix decision trail.</p>
 
           <h3><a href="/projects/tls-inspection-lab">TLS Inspection &amp; Encrypted Traffic Testing</a></h3>
-          <p class="kicker">Placeholder — add cert chain approach, client impact, and failure cases.</p>
+          <p class="kicker">Documents certificate chain design, client compatibility impact, and failure-case analysis.</p>
         </div>
 
-        <h2>Lab Notes &amp; Build Logs</h2>
+        <h2 id="lab-notes">Lab Notes &amp; Build Logs</h2>
         <p>Build logs focused on what broke, why it broke, and what the fix taught me.</p>
 
         <ul class="list">
@@ -319,7 +313,7 @@
           <li><a href="/blog/">View All Lab Notes</a></li>
         </ul>
 
-        <h2>Network Diagrams &amp; Lab Topology</h2>
+        <h2 id="topology">Network Diagrams &amp; Lab Topology</h2>
         <ul class="list">
           <li><a href="/diagrams/home-lab-topology">Current Home Lab Topology</a></li>
           <li><a href="/diagrams/firewall-zone-design">Firewall Zone Architecture</a></li>
