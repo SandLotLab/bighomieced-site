@@ -4,8 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>BigHomieCed | Home Lab, Networking & Systems Engineering Projects</title>
-  <meta name="description" content="Hands-on home lab builds, networking experiments, firewall configurations, L2/L3 routing labs, automation projects, and systems engineering documentation." />
+  <title>BigHomieCed | Zero Trust Home Lab Infrastructure Engineering</title>
+  <meta name="description" content="Segmentation-first home lab builds with identity-aware policy, default-deny firewall architecture, east-west control, automation guardrails, and practical systems engineering documentation." />
   <link rel="canonical" href="https://bighomieced.app/" />
   <meta name="robots" content="index,follow" />
 
@@ -255,13 +255,12 @@
 
   <main class="card">
     <!-- SINGLE H1 (SEO forward) -->
-    <h1>Home Lab, Networking &amp; Systems Engineering Sandbox</h1>
+    <h1>Home Lab — Zero Trust Infrastructure Engineering Sandbox</h1>
 
     <p>
-  BigHomieCed.app is a public engineering lab focused on practical infrastructure design.
-  Every post is built from real experiments: segment first, enforce policy, test packet flow,
-  break assumptions, then document the fix. If you want applied networking and systems work
-  without tutorial fluff, this is the workspace.
+  BigHomieCed.app is a public engineering lab focused on practical infrastructure design built with
+  segmentation-first architecture, identity-aware policy, and least-privilege enforcement.
+  Every build assumes breach. Every control is intentional.
     </p>
 
     <div class="hero-cta">
@@ -276,34 +275,55 @@
       <section>
         <h2 id="lab-scope">What This Lab Covers</h2>
         <p>
-          Practical infrastructure engineering: VLAN segmentation, firewall policy design,
-          routing labs, zero-trust experiments, automation pipelines, and hardening patterns.
+          Practical infrastructure engineering with a Zero Trust mindset: architect first,
+          constrain trust boundaries, validate control paths, then document results.
         </p>
 
         <ul class="list">
-          <li><a href="/projects/home-lab-architecture">Home Lab Architecture &amp; Virtualization</a></li>
-          <li><a href="/projects/network-segmentation-vlans">Network Segmentation with VLANs</a></li>
-          <li><a href="/projects/firewall-policy-design">Firewall Policy Design &amp; Hardening</a></li>
-          <li><a href="/projects/l2-l3-routing-labs">Layer 2 / Layer 3 Routing Labs</a></li>
-          <li><a href="/projects/automation-pipelines">Infrastructure Automation Projects</a></li>
-          <li><a href="/projects/zero-trust-experiment">Zero Trust Network Experiments</a></li>
+          <li><a href="/projects/network-segmentation-vlans">Identity-Aware Segmentation (VLAN + Policy Enforcement)</a></li>
+          <li><a href="/projects/firewall-policy-design">Firewall Policy Design (Default-Deny Architecture)</a></li>
+          <li><a href="/projects/tls-inspection-lab">TLS Inspection &amp; Encrypted Traffic Strategy</a></li>
+          <li><a href="/projects/admin-tiering-lab">Admin Tiering &amp; Privilege Separation</a></li>
+          <li><a href="/projects/east-west-traffic-control">Secure Routing &amp; East-West Traffic Control</a></li>
+          <li><a href="/projects/automation-pipelines">Infrastructure Automation with Guardrails</a></li>
+          <li><a href="/projects/zero-trust-experiment">Home-Lab Zero Trust Experiments</a></li>
         </ul>
 
-        <h2 id="featured-builds">Featured Engineering Builds</h2>
+        <h2 id="featured-builds">Featured Zero Trust Engineering Builds</h2>
 
         <div class="panel">
-          <h3><a href="/projects/segmented-home-lab-build">Designing a Segmented Home Lab from Scratch</a></h3>
+          <h3><a href="/projects/segmented-home-lab-build">Designing a Segmented Home Network with Default-Deny Rules</a></h3>
           <p class="kicker">Build write-up includes topology diagrams, VLAN plan, route intent, zone boundaries, and validation checks.</p>
 
           <h3><a href="/projects/firewall-from-zero">Building a Deny-by-Default Firewall Policy</a></h3>
           <p class="kicker">Covers policy strategy, logging model, staged rollout, and break/fix decision trail.</p>
 
-          <h3><a href="/projects/tls-inspection-lab">TLS Inspection &amp; Encrypted Traffic Testing</a></h3>
-          <p class="kicker">Documents certificate chain design, client compatibility impact, and failure-case analysis.</p>
+          <h3><a href="/projects/admin-tiering-lab">Implementing Admin Tiering in a Home Lab</a></h3>
+          <p class="kicker">Documents privileged access boundaries, management plane isolation, and validation outcomes.</p>
+
+          <h3><a href="/projects/east-west-traffic-control">Enforcing East-West Traffic Inspection</a></h3>
+          <p class="kicker">Covers lateral movement containment strategy, rule intent, and packet-level verification.</p>
+
+          <h3><a href="/projects/zero-trust-dns-strategy">Zero Trust DNS Strategy (DoH / Filtering / Logging)</a></h3>
+          <p class="kicker">Details resolver architecture, policy control points, and observability tradeoffs.</p>
+        </div>
+
+        <h2>Engineering Philosophy</h2>
+        <p>
+          Zero Trust is not a product. It is an architectural discipline.
+          Segment first. Enforce least privilege. Log everything. Validate continuously.
+          This lab documents what that looks like in practice.
+        </p>
+
+        <h2>Series &amp; Tags</h2>
+        <div class="tags" aria-label="content tags">
+          <span class="tag">Zero Trust Series</span>
+          <span class="tag">Secure Architecture Builds</span>
+          <span class="tag">Identity &amp; Policy Labs</span>
         </div>
 
         <h2 id="lab-notes">Lab Notes &amp; Build Logs</h2>
-        <p>Build logs focused on what broke, why it broke, and what the fix taught me.</p>
+        <p>Build logs focused on what broke, why it broke, and what the fix taught me. Each major build is being standardized with: assumed threat, control implemented, validation method, what broke, and what improved.</p>
 
         <ul class="list">
           <li><a href="/blog/designing-vlan-segmentation">Designing VLAN Segmentation for a Home Lab</a></li>
