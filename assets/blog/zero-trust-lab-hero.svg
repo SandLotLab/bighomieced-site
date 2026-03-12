@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Zero Trust lab architecture">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#070711"/>
+      <stop offset="100%" stop-color="#0b0b16"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="180" cy="120" r="180" fill="#8b5cf6" opacity="0.2"/>
+  <circle cx="1030" cy="170" r="140" fill="#22d3ee" opacity="0.14"/>
+  <circle cx="640" cy="520" r="220" fill="#76ff7a" opacity="0.08"/>
+  <rect x="130" y="120" width="940" height="390" rx="22" fill="#121327" stroke="#a78bfa" stroke-opacity="0.4"/>
+  <text x="180" y="250" fill="#f4f4ff" font-size="56" font-family="monospace" font-weight="700">BigHomieCed Blog</text>
+  <text x="180" y="320" fill="#a78bfa" font-size="34" font-family="monospace">Zero Trust Infrastructure Notes</text>
+  <text x="180" y="388" fill="#f4f4ff" font-size="26" font-family="monospace" opacity="0.8">build • break • validate • repeat</text>
+</svg>

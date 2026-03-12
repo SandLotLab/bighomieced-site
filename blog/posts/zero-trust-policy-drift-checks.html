@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Zero Trust Policy Drift Checks in a Home Lab | BigHomieCed Blog</title>
+  <meta name="description" content="A practical process for catching Zero Trust policy drift in segmentation-first lab environments." />
+  <link rel="canonical" href="https://bighomieced.app/blog/posts/zero-trust-policy-drift-checks" />
+  <meta name="robots" content="index,follow" />
+  <meta property="og:title" content="Zero Trust Policy Drift Checks in a Home Lab" />
+  <meta property="og:description" content="How to catch policy drift before trust boundaries erode." />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://bighomieced.app/assets/blog/zero-trust-lab-hero.svg" />
+  <link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+  <nav class="top-nav">
+    <a class="home-btn" href="/">Home</a>
+    <div class="top-links"><a href="/blog/">Blog</a></div>
+  </nav>
+
+  <main class="card">
+    <article>
+      <h1>Zero Trust Policy Drift Checks in a Home Lab</h1>
+      <div class="blog-meta"><span class="category-pill"><a href="/blog/category/zero-trust">Zero Trust</a></span> · Published Mar 12, 2026 · 7 min read</div>
+      <img class="hero-image" src="/assets/blog/zero-trust-lab-hero.svg" alt="Zero Trust lab topology visual" loading="lazy" />
+
+      <p>Policy drift is one of the easiest ways to lose Zero Trust posture without noticing. In a home lab, drift usually comes from emergency allow rules and one-off troubleshooting changes that never get rolled back.</p>
+      <p>Simple fix: track every temporary rule with an expiry window, run weekly rule-diff checks, and validate east-west traffic paths against your intended matrix.</p>
+
+      <section class="related-posts">
+        <h2>Related posts</h2>
+        <ul class="list">
+          <li><a href="/blog/posts/routing-failover-baseline">Routing Failover Baseline: What to Measure First</a></li>
+          <li><a href="/blog/category/firewalls">More in Firewalls</a></li>
+        </ul>
+      </section>
+
+      <section class="comments-box" data-comments-key="zero-trust-policy-drift-checks">
+        <h2>Comments</h2>
+        <p style="font-size:12px;">Use any nickname — serious, goofy, or random.</p>
+        <form class="comment-form">
+          <input name="username" type="text" placeholder="Username (optional)" maxlength="40" />
+          <textarea name="message" rows="4" placeholder="Add your comment" required></textarea>
+          <button type="submit">Post comment</button>
+        </form>
+        <div class="comment-list" style="margin-top:10px;"></div>
+      </section>
+    </article>
+  </main>
+
+  <div id="site-footer"></div>
+  <script>
+    fetch('/partials/footer.html').then(r => r.text()).then(html => document.getElementById('site-footer').innerHTML = html);
+
+    (function () {
+      const box = document.querySelector('[data-comments-key]');
+      if (!box) return;
+      const key = 'bhc-comments-' + box.dataset.commentsKey;
+      const names = ['PacketPirate', 'VLANVandal', 'RootNoodle', 'SockPuppet42', 'NullRoute'];
+      const form = box.querySelector('.comment-form');
+      const list = box.querySelector('.comment-list');
+
+      const escapeHtml = (s) => s.replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+      const render = () => {
+        const comments = JSON.parse(localStorage.getItem(key) || '[]');
+        list.innerHTML = comments.map(c => `<div class="comment"><strong>${escapeHtml(c.user)}</strong><div style="font-size:12px;opacity:.75;">${c.date}</div><p style="margin:6px 0 0;">${escapeHtml(c.msg)}</p></div>`).join('') || '<p class="blog-meta">No comments yet.</p>';
+      };
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const data = new FormData(form);
+        const msg = (data.get('message') || '').toString().trim();
+        if (!msg) return;
+        const userInput = (data.get('username') || '').toString().trim();
+        const user = userInput || names[Math.floor(Math.random() * names.length)];
+        const comments = JSON.parse(localStorage.getItem(key) || '[]');
+        comments.unshift({ user, msg, date: new Date().toLocaleString() });
+        localStorage.setItem(key, JSON.stringify(comments.slice(0, 50)));
+        form.reset();
+        render();
+      });
+
+      render();
+    })();
+  </script>
+</body>
+</html>

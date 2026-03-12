@@ -53,7 +53,7 @@ body{
 .top-nav{
   width: min(1120px, calc(100vw - 32px));
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: 14px;
@@ -217,6 +217,92 @@ a:hover {
   padding: 14px;
 }
 
+/* ================= BLOG ================= */
+
+.blog-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  gap: 22px;
+  align-items: start;
+}
+
+.blog-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.blog-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: rgba(15,16,32,.38);
+  padding: 14px;
+}
+
+.blog-meta {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.category-pill {
+  display: inline-flex;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(167,139,250,.35);
+  background: rgba(139,92,246,.12);
+  font-size: 12px;
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  margin: 10px 0 14px;
+}
+
+.related-posts,
+.comments-box {
+  margin-top: 18px;
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+}
+
+.comment-form {
+  display: grid;
+  gap: 8px;
+}
+
+.comment-form input,
+.comment-form textarea {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: rgba(7,7,17,.8);
+  color: var(--text);
+  padding: 10px;
+  font: inherit;
+  font-size: 13px;
+}
+
+.comment-form button {
+  width: fit-content;
+  border-radius: 999px;
+  border: 1px solid rgba(167,139,250,.5);
+  background: rgba(139,92,246,.16);
+  color: var(--text);
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.comment {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 8px;
+  background: rgba(15,16,32,.36);
+}
+
 /* ================= FOOTER ================= */
 
 #site-footer { width: 100%; }
@@ -266,6 +352,7 @@ footer {
 
 @media (max-width: 900px) {
   .layout { grid-template-columns: 1fr; }
+  .blog-layout { grid-template-columns: 1fr; }
 
   .footerwrap {
     width: min(1120px, 96vw);

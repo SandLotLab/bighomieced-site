@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blog & News — BigHomieCed</title>
+  <meta name="description" content="Lab notes and practical news from BigHomieCed covering Zero Trust, cyber security, routing, firewalls, AI, and focused deep dives." />
+  <link rel="canonical" href="https://bighomieced.app/blog/" />
+  <meta name="robots" content="index,follow" />
+  <meta property="og:title" content="Blog & News — BigHomieCed" />
+  <meta property="og:description" content="Practical infrastructure notes and technical commentary from the lab." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://bighomieced.app/blog/" />
+  <link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+  <nav class="top-nav">
+    <a class="home-btn" href="/">Home</a>
+    <div class="top-links">
+      <a href="/blog/">Blog</a>
+      <span class="pipe">|</span>
+      <a href="/#lab-scope">Lab Scope</a>
+      <span class="pipe">|</span>
+      <a href="/#featured-builds">Builds</a>
+      <span class="pipe">|</span>
+      <a href="/#lab-notes">Notes</a>
+      <span class="pipe">|</span>
+      <a href="/#topology">Topology</a>
+    </div>
+  </nav>
+
+  <main class="card">
+    <h1>Blog & News</h1>
+    <p>Lightweight lab publishing for updates, lessons learned, and targeted news commentary tied to infrastructure engineering.</p>
+
+    <div class="blog-layout">
+      <section class="blog-grid">
+        <article class="blog-card">
+          <div class="blog-meta"><span class="category-pill">Zero Trust</span> · Mar 12, 2026 · 7 min read</div>
+          <h3><a href="/blog/posts/zero-trust-policy-drift-checks">Zero Trust Policy Drift Checks in a Home Lab</a></h3>
+          <p>How to spot policy drift before it turns segmentation into a false sense of safety.</p>
+        </article>
+
+        <article class="blog-card">
+          <div class="blog-meta"><span class="category-pill">Routing &amp; Switching</span> · Mar 4, 2026 · 6 min read</div>
+          <h3><a href="/blog/posts/routing-failover-baseline">Routing Failover Baseline: What to Measure First</a></h3>
+          <p>A practical baseline for proving convergence behavior instead of guessing during outages.</p>
+        </article>
+      </section>
+
+      <aside class="side">
+        <h2 style="margin-top:0;">Categories</h2>
+        <ul class="list">
+          <li><a href="/blog/category/cyber-security">Cyber Security</a></li>
+          <li><a href="/blog/category/zero-trust">Zero Trust</a></li>
+          <li><a href="/blog/category/firewalls">Firewalls</a></li>
+          <li><a href="/blog/category/routing-switching">Routing &amp; Switching</a></li>
+          <li><a href="/blog/category/ai">AI</a></li>
+          <li><a href="/blog/category/geopolitical-tech-news">Geopolitical Tech News</a></li>
+          <li><a href="/blog/category/tech-news">Tech News</a></li>
+          <li><a href="/blog/category/wellness-fitness">Wellness / Fitness</a></li>
+          <li><a href="/blog/category/wealth-mindset">Wealth / Mindset</a></li>
+          <li><a href="/blog/category/deep-dives-rabbit-holes">Deep Dives / Rabbit Holes</a></li>
+        </ul>
+      </aside>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+  <script>
+    fetch('/partials/footer.html')
+      .then(r => r.text())
+      .then(html => document.getElementById('site-footer').innerHTML = html);
+  </script>
+</body>
+</html>
