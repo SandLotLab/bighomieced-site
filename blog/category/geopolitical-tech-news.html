@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Geopolitical Tech News — Blog Category | BigHomieCed</title>
+  <meta name="description" content="Posts in the Geopolitical Tech News category on BigHomieCed blog." />
+  <link rel="canonical" href="https://bighomieced.app/blog/category/geopolitical-tech-news" />
+  <meta name="robots" content="index,follow" />
+  <link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+  <nav class="top-nav">
+    <a class="home-btn" href="/">Home</a>
+    <div class="top-links">
+      <a href="/blog/">Blog</a>
+      <span class="pipe">|</span>
+      <a href="/#lab-scope">Lab Scope</a>
+      <span class="pipe">|</span>
+      <a href="/#featured-builds">Builds</a>
+    </div>
+  </nav>
+
+  <main class="card">
+    <h1>Geopolitical Tech News</h1>
+    <p>Category archive for Geopolitical Tech News. New posts will appear here.</p>
+    <ul class="list">
+      <li><a href="/blog/posts/zero-trust-policy-drift-checks">Zero Trust Policy Drift Checks in a Home Lab</a></li>
+      <li><a href="/blog/posts/routing-failover-baseline">Routing Failover Baseline: What to Measure First</a></li>
+    </ul>
+    <p><a href="/blog/">← Back to blog landing</a></p>
+  </main>
+
+  <div id="site-footer"></div>
+  <script>
+    fetch('/partials/footer.html')
+      .then(r => r.text())
+      .then(html => document.getElementById('site-footer').innerHTML = html);
+  </script>
+</body>
+</html>
