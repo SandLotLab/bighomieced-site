@@ -1,45 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://bighomieced.app/</loc>
-    <lastmod>2026-03-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://bighomieced.app/blog/</loc>
-    <lastmod>2026-03-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://bighomieced.app/blog/posts/zero-trust-policy-drift-checks</loc>
-    <lastmod>2026-03-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://bighomieced.app/blog/posts/routing-failover-baseline</loc>
-    <lastmod>2026-03-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://bighomieced.app/about</loc>
-    <lastmod>2026-03-12</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://bighomieced.app/privacy</loc>
-    <lastmod>2026-03-12</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://bighomieced.app/terms</loc>
-    <lastmod>2026-03-12</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
+
+  <!-- Core pages -->
+  <url><loc>https://bighomieced.app/</loc></url>
+  <url><loc>https://bighomieced.app/blog/</loc></url>
+  <url><loc>https://bighomieced.app/about</loc></url>
+  <url><loc>https://bighomieced.app/privacy</loc></url>
+  <url><loc>https://bighomieced.app/terms</loc></url>
+
+  <!-- Blog posts -->
+  <url><loc>https://bighomieced.app/blog/posts/zero-trust-policy-drift-checks</loc></url>
+  <url><loc>https://bighomieced.app/blog/posts/routing-failover-baseline</loc></url>
+
+  <!-- ADD THESE WHEN PAGES ARE LIVE (remove comment tags to activate) -->
+
+  <!--
+  <url><loc>https://bighomieced.app/projects/network-segmentation-vlans</loc></url>
+  <url><loc>https://bighomieced.app/projects/firewall-policy-design</loc></url>
+  <url><loc>https://bighomieced.app/projects/tls-inspection-lab</loc></url>
+  <url><loc>https://bighomieced.app/projects/admin-tiering-lab</loc></url>
+  <url><loc>https://bighomieced.app/projects/east-west-traffic-control</loc></url>
+  <url><loc>https://bighomieced.app/projects/automation-pipelines</loc></url>
+  <url><loc>https://bighomieced.app/projects/zero-trust-experiment</loc></url>
+  <url><loc>https://bighomieced.app/projects/segmented-home-lab-build</loc></url>
+  <url><loc>https://bighomieced.app/projects/firewall-from-zero</loc></url>
+  <url><loc>https://bighomieced.app/projects/zero-trust-dns-strategy</loc></url>
+  <url><loc>https://bighomieced.app/diagrams/home-lab-topology</loc></url>
+  <url><loc>https://bighomieced.app/diagrams/firewall-zone-design</loc></url>
+  <url><loc>https://bighomieced.app/diagrams/routing-flow-analysis</loc></url>
+  -->
+
 </urlset>
